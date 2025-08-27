@@ -864,6 +864,51 @@
       50% { opacity: 1; }
     }
 
+    /* Advanced Hero Background Slider */
+    .hero-background-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+    }
+    
+    .hero-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transform: scale(1.1);
+      transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .hero-slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .hero-slide.next {
+      opacity: 0;
+      transform: scale(1.05) translateX(50px);
+    }
+    
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(112,22,126,0.4) 50%, rgba(0,0,0,0.7) 100%);
+      z-index: -1;
+    }
+    
     /* Enhanced Mobile Responsive Design */
     @media (max-width: 768px) {
       .vs-hero {
@@ -873,6 +918,14 @@
       .vs-hero__content {
         padding: 20px 0 !important;
         min-height: 70vh !important;
+      }
+      
+      .hero-slide {
+        transform: scale(1.05);
+      }
+      
+      .hero-slide.active {
+        transform: scale(1);
       }
       
       .hero-content-container {
@@ -1708,12 +1761,21 @@
       
       
       
+      <!-- Advanced Hero Background Slider -->
+      <div class="hero-background-slider">
+        <div class="hero-slide active" style="background-image: url('assets/img/Les_Trois_Brigands_Web_061.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('assets/img/Casse-Noisette_Web_007.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('assets/img/Le_Petit_Prince_Web_032.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('assets/img/Tara_Sur_La_Lune_Web_020.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('assets/img/Les_Fourberies_De_Scapin_Web_021.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('assets/img/Dans_la_peau_de_Cyrano_Web_027.jpg');"></div>
+      </div>
+      <!-- Enhanced Overlay with Gradient -->
+      <div class="hero-overlay"></div>
+      
       <div class="swiper vs-hero__active--zoom">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="vs-hero__bg vs-hero__bg--zoom background-image" style="background-image: url('assets/img/Les_Trois_Brigands_Web_061.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; width: 100%; position: absolute; top: 0; left: 0; z-index: -1;"></div>
-            <!-- Black Overlay -->
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 0;"></div>
             <div class="container container--custom">
               <div class="vs-hero__content" style="position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; min-height: 100vh;">
                 <!-- Hero Content -->
@@ -1745,8 +1807,7 @@
             </div>
           </div>
           
-          <div class="swiper-slide">
-            <div class="vs-hero__bg vs-hero__bg--zoom" style="background-image: url('assets/img/Casse-Noisette_Web_007.webp');"></div>
+          <!-- Additional slides removed as we now use background slider -->
             <div class="container container--custom">
               <div class="vs-hero__content">
                 <div class="vs-hero__shape">
@@ -3186,13 +3247,7 @@
   <script src="assets/js/swiper-bundle.js"></script>
   <!-- Main Js File -->
   <script src="assets/js/main.js"></script>
-  <!-- AOS Animation Library -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!-- Enhanced Hero Slider JavaScript -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Initialize AOS
-      AOS.init({
+  <script src="assets/js/hero-slider.js"></script>
         duration: 1000,
         once: true,
         offset: 100
