@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>EDJS - Spectacles | Programmation Culturelle pour Écoles et Familles</title>
+  <meta name="author" content="EDJS">
+  <meta name="description" content="Découvrez notre programmation de spectacles culturels adaptés aux écoles, associations et familles. Réservez vos places pour des expériences théâtrales inoubliables.">
+  <meta name="keywords" content="spectacles EDJS, théâtre enfants, programmation culturelle, réservation spectacles Maroc">
+  <meta name="robots" content="INDEX,FOLLOW">
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-icon-76x76.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicons/favicon-96x96.png">
+  <link rel="shortcut icon" href="assets/img/edjs favicon_1@4x.png" type="image/png">
+  <link rel="icon" href="assets/img/edjs favicon_1@4x.png" type="image/png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+  <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+  <link rel="stylesheet" href="assets/css/animate.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* Modern Spectacles Page Styles */
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .spectacles-hero {
+      padding: 120px 0 80px;
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('assets/img/rooms/room-video-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 2;
+    }
+
+    .hero-content {
+      text-align: center;
+      color: white;
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      font-family: var(--vs-title-font);
+      margin-bottom: 20px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      color: white;
+      opacity: 0.95;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-bottom: 40px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: white;
+      line-height: 1;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: white;
+      opacity: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 8px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
+    /* Filter Section */
+    .filter-section {
+      padding: 60px 0 40px;
+      background: white;
+    }
+
+    .filter-title {
+      font-size: 2.2rem;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      font-family: var(--vs-title-font);
+      font-weight: 700;
+    }
+
+    .filter-subtitle {
+      color: #6c757d;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .filter-btn {
+      background: #f8f9fa;
+      border: 2px solid #e9ecef;
+      color: #495057;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: #BDCF00;
+      border-color: #BDCF00;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(189, 207, 0, 0.3);
+    }
+
+    .filter-btn i {
+      margin-right: 8px;
+    }
+
+    /* Spectacles Grid */
+    .spectacles-grid {
+      padding: 40px 0 80px;
+      background: white;
+    }
+
+    .spectacle-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .spectacle-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.12), 0 0 0 1px rgba(189, 207, 0, 0.1);
+      border-color: rgba(189, 207, 0, 0.2);
+    }
+
+    .card-image-wrapper {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+      border-radius: 24px 24px 0 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      background: transparent;
+      padding: 20px;
+      border-radius: 24px 24px 0 0;
+      box-sizing: border-box;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+    }
+
+    .spectacle-card:hover .card-image {
+      transform: scale(1.05);
+    }
+
+    .card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(189, 207, 0, 0.9), rgba(168, 184, 0, 0.9));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .spectacle-card:hover .card-overlay {
+      opacity: 1;
+    }
+
+    .overlay-content {
+      text-align: center;
+      color: white;
+    }
+
+    .overlay-content i {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .card-status {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #28a745;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      z-index: 2;
+    }
+
+    .card-status.coming-soon {
+      background: #ffc107;
+      color: #212529;
+    }
+
+    .card-category {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #2c3e50;
+      padding: 6px 12px;
+      border-radius: 15px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      z-index: 2;
+    }
+
+    .card-content {
+      padding: 30px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: white;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      font-family: var(--vs-title-font);
+      letter-spacing: -0.02em;
+    }
+
+    .card-description {
+      color: #5a6c7d;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      flex: 1;
+      font-size: 0.95rem;
+      font-weight: 400;
+    }
+
+    .card-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #6c757d;
+    }
+
+    .meta-icon {
+      width: 30px;
+      height: 30px;
+      background: rgba(189, 207, 0, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #BDCF00;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .card-price {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 20px;
+      padding: 15px 0;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .price-label {
+      font-size: 0.85rem;
+      color: #6c757d;
+    }
+
+    .price-amount {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #BDCF00;
+    }
+
+    .price-unit {
+      font-size: 0.85rem;
+      color: #6c757d;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-primary-custom {
+      flex: 1;
+      background: linear-gradient(135deg, #BDCF00, #a8b800);
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary-custom:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(189, 207, 0, 0.35);
+      color: white;
+      background: linear-gradient(135deg, #a8b800, #BDCF00);
+    }
+
+    .btn-secondary-custom {
+      flex: 1;
+      background: rgba(189, 207, 0, 0.08);
+      color: #7e8a01;
+      border: 2px solid rgba(189, 207, 0, 0.2);
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-secondary-custom:hover {
+      border-color: #BDCF00;
+      color: #BDCF00;
+      background: rgba(189, 207, 0, 0.15);
+      transform: translateY(-2px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .filter-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .card-actions {
+        flex-direction: column;
+      }
+
+      .card-image-wrapper {
+        height: 240px;
+      }
+    }
+
+    /* Animation classes */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Mobile Menu -->
+  <div class="vs-menu-wrapper">
+    <div class="vs-menu-area text-center">
+      <div class="mobile-logo">
+        <a href="index.html"><img src="assets/img/edjs logo black@4x.png" alt="EDJS" class="logo" style="max-height: 50px;"></a>
+        <button class="vs-menu-toggle">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="vs-mobile-menu">
+        <ul>
+          <li><a href="index.html">ACCUEIL</a></li>
+          <li><a href="about.html">À PROPOS</a></li>
+          <li><a href="spectacles.html">SPECTACLES</a></li>
+          <li><a href="schools.html">ÉCOLES</a></li>
+          <li><a href="families.html">FAMILLES</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="vs-header">
+    <div class="vs-header__top">
+      <div class="container container--custom">
+        <div class="row align-items-center justify-content-between gy-1 text-center text-lg-start">
+          <div class="col-lg-auto d-none d-lg-block">
+            <div class="d-flex align-items-center flex-wrap gap-4">
+              <div class="vs-header__info">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Email : <a href="mailto:info@edjs.ma">info@edjs.ma</a></span>
+              </div>
+              <div class="vs-header__info">
+                <i class="fa-solid fa-phone-volume"></i>
+                <span>Téléphone : <a href="tel:+212522981085">+212 5 22 98 10 85</a></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-auto">
+            <div class="social-style">
+              <span class="social-style__label">suivez-nous :</span>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sticky-wrapper">
+      <div class="sticky-active">
+        <div class="container container--custom">
+          <div class="row justify-content-between align-items-center">
+            <div class="col">
+              <div class="vs-header__logo">
+                <a href="index.html"><img src="assets/img/edjs logo black@4x.png" alt="EDJS" class="logo" style="height: 90px; width: auto;"></a>
+              </div>
+            </div>
+            <div class="col-auto">
+              <nav class="main-menu d-none d-lg-block">
+                <ul>
+                  <li>
+                    <a class="vs-svg-assets" href="index.html">
+                      ACCUEIL
+                      <svg xmlns="http://www.w3.org/2000/svg" width="87" height="31" viewBox="0 0 87 31" fill="none">
+                        <path d="M0 4.14031C0 1.87713 1.87602 0.0646902 4.13785 0.142684L83.1379 2.86682C85.2921 2.94111 87 4.70896 87 6.86445V25.0909C87 27.2642 85.2647 29.0399 83.0919 29.0898L4.09193 30.9059C1.84739 30.9575 0 29.1521 0 26.907V4.14031Z" fill="#70167E"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="vs-svg-assets" href="about.html">
+                      À PROPOS
+                      <svg xmlns="http://www.w3.org/2000/svg" width="87" height="31" viewBox="0 0 87 31" fill="none">
+                        <path d="M0 4.14031C0 1.87713 1.87602 0.0646902 4.13785 0.142684L83.1379 2.86682C85.2921 2.94111 87 4.70896 87 6.86445V25.0909C87 27.2642 85.2647 29.0399 83.0919 29.0898L4.09193 30.9059C1.84739 30.9575 0 29.1521 0 26.907V4.14031Z" fill="#70167E"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="vs-svg-assets" href="spectacles.html">
+                      SPECTACLES
+                      <svg xmlns="http://www.w3.org/2000/svg" width="87" height="31" viewBox="0 0 87 31" fill="none">
+                        <path d="M0 4.14031C0 1.87713 1.87602 0.0646902 4.13785 0.142684L83.1379 2.86682C85.2921 2.94111 87 4.70896 87 6.86445V25.0909C87 27.2642 85.2647 29.0399 83.0919 29.0898L4.09193 30.9059C1.84739 30.9575 0 29.1521 0 26.907V4.14031Z" fill="#70167E"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="vs-svg-assets" href="gallery.html">
+                      GALERIE
+                      <svg xmlns="http://www.w3.org/2000/svg" width="87" height="31" viewBox="0 0 87 31" fill="none">
+                        <path d="M0 4.14031C0 1.87713 1.87602 0.0646902 4.13785 0.142684L83.1379 2.86682C85.2921 2.94111 87 4.70896 87 6.86445V25.0909C87 27.2642 85.2647 29.0399 83.0919 29.0898L4.09193 30.9059C1.84739 30.9575 0 29.1521 0 26.907V4.14031Z" fill="#70167E"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="vs-svg-assets" href="blog.html">
+                      BLOG
+                      <svg xmlns="http://www.w3.org/2000/svg" width="87" height="31" viewBox="0 0 87 31" fill="none">
+                        <path d="M0 4.14031C0 1.87713 1.87602 0.0646902 4.13785 0.142684L83.1379 2.86682C85.2921 2.94111 87 4.70896 87 6.86445V25.0909C87 27.2642 85.2647 29.0399 83.0919 29.0898L4.09193 30.9059C1.84739 30.9575 0 29.1521 0 26.907V4.14031Z" fill="#70167E"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="vs-svg-assets" href="contact.html">
+                      CONTACT
+                      <svg xmlns="http://www.w3.org/2000/svg" width="87" height="31" viewBox="0 0 87 31" fill="none">
+                        <path d="M0 4.14031C0 1.87713 1.87602 0.0646902 4.13785 0.142684L83.1379 2.86682C85.2921 2.94111 87 4.70896 87 6.86445V25.0909C87 27.2642 85.2647 29.0399 83.0919 29.0898L4.09193 30.9059C1.84739 30.9575 0 29.1521 0 26.907V4.14031Z" fill="#70167E"></path>
+                      </svg>
+                    </a>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-auto">
+              <div class="vs-header__action">
+                <div class="d-none d-xxl-inline-flex">
+                  <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="vs-btn"><span class="vs-btn__border"></span>admission</a>
+                </div>
+                <button class="vs-menu-toggle style2 d-inline-block d-lg-none">
+                  <i class="fal fa-bars"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="spectacles-hero">
+    <div class="hero-background"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Nos Spectacles</h1>
+        <p class="hero-subtitle">
+          Découvrez notre programmation exceptionnelle de spectacles culturels<br>
+          adaptés à tous les âges et conçus pour éveiller l'imagination
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">8+</div>
+            <div class="stat-label">Spectacles</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">50K+</div>
+            <div class="stat-label">Spectateurs</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">120+</div>
+            <div class="stat-label">Représentations</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="filter-title">Choisissez Votre Public</h2>
+        <p class="filter-subtitle">Trouvez le spectacle parfait adapté à votre groupe</p>
+
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">
+            <i class="fas fa-globe"></i> Tous les Spectacles
+          </button>
+          <button class="filter-btn" data-filter="maternelle">
+            <i class="fas fa-baby"></i> Maternelle
+          </button>
+          <button class="filter-btn" data-filter="primaire">
+            <i class="fas fa-child"></i> Primaire
+          </button>
+          <button class="filter-btn" data-filter="college">
+            <i class="fas fa-user-friends"></i> Collège
+          </button>
+          <button class="filter-btn" data-filter="lycee">
+            <i class="fas fa-graduation-cap"></i> Lycée
+          </button>
+          <button class="filter-btn" data-filter="famille">
+            <i class="fas fa-heart"></i> Familles
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spectacles Grid -->
+  <section class="spectacles-grid">
+    <div class="container">
+      <div class="row g-4" id="spectacles-container">
+
+        <!-- Spectacle 1: Charlotte -->
+        <div class="col-lg-4 col-md-6 spectacle-item maternelle primaire" data-category="maternelle primaire">
+          <div class="spectacle-card fade-in-up">
+            <div class="card-image-wrapper">
+              <img src="assets/img/4x/Asset 10@4x.png" alt="Charlotte" class="card-image">
+              <div class="card-status">Disponible</div>
+              <div class="card-category">Marionnettes</div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Charlotte</h3>
+              <p class="card-description">
+                Une histoire touchante avec Juliere Gillis et Pascal Miralles, mettant en scène la mise en scène de Pascal Miralles dans un spectacle de marionnettes captivant.
+              </p>
+              <div class="card-meta">
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-calendar-alt"></i></div>
+                  <span>Oct - Nov 2025</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-users"></i></div>
+                  <span>4-10 ans</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-clock"></i></div>
+                  <span>50 min</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-map-marker-alt"></i></div>
+                  <span>Théâtre Mohammed V</span>
+                </div>
+              </div>
+              <div class="card-price">
+                <span class="price-label">À partir de</span>
+                <span class="price-amount">100 DH</span>
+                <span class="price-unit">/personne</span>
+              </div>
+              <div class="card-actions">
+                <a href="contact.html?spectacle=charlotte" class="btn-primary-custom">
+                  <i class="fas fa-ticket-alt"></i> Réserver
+                </a>
+                <a href="spectacle-charlotte.html" class="btn-secondary-custom">
+                  <i class="fas fa-info-circle"></i> Détails
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spectacle 2: Tara Sur La Lune -->
+        <div class="col-lg-4 col-md-6 spectacle-item maternelle primaire famille" data-category="maternelle primaire famille">
+          <div class="spectacle-card fade-in-up">
+            <div class="card-image-wrapper">
+              <img src="assets/img/4x/Asset 11@4x.png" alt="Tara sur la Lune" class="card-image">
+
+              <div class="card-status">Disponible</div>
+              <div class="card-category">Musical</div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">تارا إلى القمر</h3>
+              <p class="card-description">
+                Une aventure spatiale musicale bilingue qui emmène les enfants dans un voyage extraordinaire à travers l'espace et l'imagination, pour les enfants de 5 ans et plus.
+              </p>
+              <div class="card-meta">
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-calendar-alt"></i></div>
+                  <span>Nov - Déc 2025</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-users"></i></div>
+                  <span>5+ ans</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-clock"></i></div>
+                  <span>1h10</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-map-marker-alt"></i></div>
+                  <span>Théâtre Mohammed V</span>
+                </div>
+              </div>
+              <div class="card-price">
+                <span class="price-label">À partir de</span>
+                <span class="price-amount">130 DH</span>
+                <span class="price-unit">/personne</span>
+              </div>
+              <div class="card-actions">
+                <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="btn-primary-custom">
+                  <i class="fas fa-ticket-alt"></i> Réserver
+                </a>
+                <a href="spectacle-tara-sur-la-lune.html" class="btn-secondary-custom">
+                  <i class="fas fa-info-circle"></i> Détails
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spectacle 3: L'Eau-Là -->
+        <div class="col-lg-4 col-md-6 spectacle-item primaire college famille" data-category="primaire college famille">
+          <div class="spectacle-card fade-in-up">
+            <div class="card-image-wrapper">
+              <img src="assets/img/4x/Asset 12@4x.png" alt="L'Eau-Là" class="card-image">
+
+              <div class="card-status">Disponible</div>
+              <div class="card-category">Poétique</div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">L'Eau-Là</h3>
+              <p class="card-description">
+                Un spectacle poétique et rafraîchissant porté par la voix de Zaz, explorant la beauté et l'importance de l'eau dans nos vies et notre environnement.
+              </p>
+              <div class="card-meta">
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-calendar-alt"></i></div>
+                  <span>Jan - Fév 2026</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-users"></i></div>
+                  <span>8-16 ans</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-clock"></i></div>
+                  <span>1h15</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-map-marker-alt"></i></div>
+                  <span>Centre Culturel Sidi Belyout</span>
+                </div>
+              </div>
+              <div class="card-price">
+                <span class="price-label">À partir de</span>
+                <span class="price-amount">140 DH</span>
+                <span class="price-unit">/personne</span>
+              </div>
+              <div class="card-actions">
+                <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="btn-primary-custom">
+                  <i class="fas fa-ticket-alt"></i> Réserver
+                </a>
+                <a href="spectacle-leau-la.html" class="btn-secondary-custom">
+                  <i class="fas fa-info-circle"></i> Détails
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spectacle 4: L'Enfant de l'Arbre -->
+        <div class="col-lg-4 col-md-6 spectacle-item maternelle primaire famille" data-category="maternelle primaire famille">
+          <div class="spectacle-card fade-in-up">
+            <div class="card-image-wrapper">
+              <img src="assets/img/4x/Asset 13@4x.png" alt="L'Enfant et l'Arbre" class="card-image">
+
+              <div class="card-status">Disponible</div>
+              <div class="card-category">Conte Écologique</div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">L'Enfant de l'Arbre</h3>
+              <p class="card-description">
+                Un conte poétique sur la relation entre l'homme et la nature, racontant l'histoire d'un enfant qui grandit avec un arbre centenaire.
+              </p>
+              <div class="card-meta">
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-calendar-alt"></i></div>
+                  <span>Mar - Avr 2026</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-users"></i></div>
+                  <span>5-12 ans</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-clock"></i></div>
+                  <span>1h00</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-map-marker-alt"></i></div>
+                  <span>Théâtre National</span>
+                </div>
+              </div>
+
+              <div class="card-actions">
+                <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="btn-primary-custom">
+                  <i class="fas fa-ticket-alt"></i> Réserver
+                </a>
+                <a href="spectacle-enfant-de-larbre.html" class="btn-secondary-custom">
+                  <i class="fas fa-info-circle"></i> Détails
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spectacle 5: Alice chez les Merveilles -->
+        <div class="col-lg-4 col-md-6 spectacle-item primaire college famille" data-category="primaire college famille">
+          <div class="spectacle-card fade-in-up">
+            <div class="card-image-wrapper">
+              <img src="assets/img/4x/Asset 14@4x.png" alt="Alice aux Merveilles" class="card-image">
+
+              <div class="card-status">Disponible</div>
+              <div class="card-category">Conte Fantastique</div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Alice chez les Merveilles</h3>
+              <p class="card-description">
+                Une adaptation moderne et créative du classique de Lewis Carroll, plongeant Alice et le public dans un monde fantastique rempli de surprises.
+              </p>
+              <div class="card-meta">
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-calendar-alt"></i></div>
+                  <span>Déc 2025</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-users"></i></div>
+                  <span>6-14 ans</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-clock"></i></div>
+                  <span>1h20</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-map-marker-alt"></i></div>
+                  <span>Opéra de Casablanca</span>
+                </div>
+              </div>
+              <div class="card-price">
+                <span class="price-label">À partir de</span>
+                <span class="price-amount">150 DH</span>
+                <span class="price-unit">/personne</span>
+              </div>
+              <div class="card-actions">
+                <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="btn-primary-custom">
+                  <i class="fas fa-ticket-alt"></i> Réserver
+                </a>
+                <a href="spectacle-alice.html" class="btn-secondary-custom">
+                  <i class="fas fa-info-circle"></i> Détails
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spectacle 6: الأمير الصغير (Le Petit Prince) -->
+        <div class="col-lg-4 col-md-6 spectacle-item primaire famille" data-category="primaire famille">
+          <div class="spectacle-card fade-in-up">
+            <div class="card-image-wrapper">
+              <img src="assets/img/4x/Asset 15@4x.png" alt="الأمير الصغير" class="card-image">
+
+              <div class="card-status">Disponible</div>
+              <div class="card-category">Conte Musical Arabe</div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">الأمير الصغير</h3>
+              <p class="card-description">
+                L'adaptation en arabe du chef-d'œuvre de Saint-Exupéry, une histoire poétique universelle sur l'amitié, l'amour et les valeurs humaines essentielles.
+              </p>
+              <div class="card-meta">
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-calendar-alt"></i></div>
+                  <span>Fév - Mar 2026</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-users"></i></div>
+                  <span>6-12 ans</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-clock"></i></div>
+                  <span>1h15</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-map-marker-alt"></i></div>
+                  <span>Théâtre Mohammed V</span>
+                </div>
+              </div>
+
+              <div class="card-actions">
+                <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="btn-primary-custom">
+                  <i class="fas fa-ticket-alt"></i> Réserver
+                </a>
+                <a href="spectacle-petit-prince.html" class="btn-secondary-custom">
+                  <i class="fas fa-info-circle"></i> Détails
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spectacle 7: Simple Comme Bonjour -->
+        <div class="col-lg-4 col-md-6 spectacle-item maternelle primaire famille" data-category="maternelle primaire famille">
+          <div class="spectacle-card fade-in-up">
+            <div class="card-image-wrapper">
+              <img src="assets/img/4x/Asset 16@4x.png" alt="Simple comme Bonjour" class="card-image">
+
+              <div class="card-status">Disponible</div>
+              <div class="card-category">Musical</div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Simple Comme Bonjour</h3>
+              <p class="card-description">
+                Un spectacle joyeux et interactif de Jacques Serres, célébrant la simplicité des petits bonheurs quotidiens avec musique, chants et sourires.
+              </p>
+              <div class="card-meta">
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-calendar-alt"></i></div>
+                  <span>Avr - Mai 2026</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-users"></i></div>
+                  <span>3-10 ans</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-clock"></i></div>
+                  <span>45 min</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-map-marker-alt"></i></div>
+                  <span>Centre Culturel Sidi Belyout</span>
+                </div>
+              </div>
+              <div class="card-price">
+                <span class="price-label">À partir de</span>
+                <span class="price-amount">90 DH</span>
+                <span class="price-unit">/personne</span>
+              </div>
+              <div class="card-actions">
+                <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="btn-primary-custom">
+                  <i class="fas fa-ticket-alt"></i> Réserver
+                </a>
+                <a href="spectacle-simple-comme-bonjour.html" class="btn-secondary-custom">
+                  <i class="fas fa-info-circle"></i> Détails
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spectacle 8: Estuaires -->
+        <div class="col-lg-4 col-md-6 spectacle-item college lycee" data-category="college lycee">
+          <div class="spectacle-card fade-in-up">
+            <div class="card-image-wrapper">
+              <img src="assets/img/4x/Asset 17@4x.png" alt="Estuaires" class="card-image">
+
+              <div class="card-status coming-soon">Bientôt</div>
+              <div class="card-category">Théâtre Contemporain</div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Estuaires</h3>
+              <p class="card-description">
+                Une pièce contemporaine explorant les rencontres entre différentes cultures, comme les eaux qui se mélangent dans un estuaire.
+              </p>
+              <div class="card-meta">
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-calendar-alt"></i></div>
+                  <span>Mai - Juin 2026</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-users"></i></div>
+                  <span>12-18 ans</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-clock"></i></div>
+                  <span>1h30</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-map-marker-alt"></i></div>
+                  <span>Institut Français</span>
+                </div>
+              </div>
+              <div class="card-price">
+                <span class="price-label">À partir de</span>
+                <span class="price-amount">160 DH</span>
+                <span class="price-unit">/personne</span>
+              </div>
+              <div class="card-actions">
+                <a href="contact.html?spectacle=estuaires" class="btn-primary-custom" style="opacity: 0.7; cursor: not-allowed;">
+                  <i class="fas fa-clock"></i> Pré-réserver
+                </a>
+                <a href="spectacle-estuaires.html" class="btn-secondary-custom">
+                  <i class="fas fa-info-circle"></i> Détails
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spectacle 9: Antigone -->
+        <div class="col-lg-4 col-md-6 spectacle-item college famille" data-category="college famille">
+          <div class="spectacle-card fade-in-up">
+            <div class="card-image-wrapper">
+              <img src="assets/img/4x/Asset 18@4x.png" alt="Antigone" class="card-image">
+
+              <div class="card-status">Disponible</div>
+              <div class="card-category">Tragédie Classique</div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Antigone</h3>
+              <p class="card-description">
+                La tragédie intemporelle de Sophocle adaptée pour les jeunes spectateurs. Une œuvre puissante sur la résistance, le courage et les valeurs morales face à la tyrannie.
+              </p>
+              <div class="card-meta">
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-calendar-alt"></i></div>
+                  <span>Mars - Avril 2025</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-users"></i></div>
+                  <span>14-18 ans</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-clock"></i></div>
+                  <span>1h45</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-map-marker-alt"></i></div>
+                  <span>Théâtre National</span>
+                </div>
+              </div>
+
+              <div class="card-actions">
+                <a href="contact.html?spectacle=antigone" class="btn-primary-custom">
+                  <i class="fas fa-ticket-alt"></i> Réserver
+                </a>
+                <a href="spectacle-antigone.html" class="btn-secondary-custom">
+                  <i class="fas fa-info-circle"></i> Détails
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spectacle 10: Charlotte -->
+        <div class="col-lg-4 col-md-6 spectacle-item college famille" data-category="college famille">
+          <div class="spectacle-card fade-in-up">
+            <div class="card-image-wrapper">
+              <img src="assets/img/4x/Asset 10@4x.png" alt="Charlotte" class="card-image">
+
+              <div class="card-status">Disponible</div>
+              <div class="card-category">Théâtre de Marionnettes</div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Charlotte</h3>
+              <p class="card-description">
+                Une histoire touchante avec Juliere Gillis et Pascal Miralles, mettant en scène la mise en scène de Pascal Miralles dans un spectacle de marionnettes captivant.
+              </p>
+              <div class="card-meta">
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-calendar-alt"></i></div>
+                  <span>Oct - Nov 2025</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-users"></i></div>
+                  <span>4-10 ans</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-clock"></i></div>
+                  <span>50 min</span>
+                </div>
+                <div class="meta-item">
+                  <div class="meta-icon"><i class="fas fa-map-marker-alt"></i></div>
+                  <span>Théâtre Mohammed V</span>
+                </div>
+              </div>
+              <div class="card-actions">
+                <a href="contact.html?spectacle=charlotte" class="btn-primary-custom">
+                  <i class="fas fa-ticket-alt"></i> Réserver
+                </a>
+                <a href="spectacle-charlotte.html" class="btn-secondary-custom">
+                  <i class="fas fa-info-circle"></i> Détails
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--==============================
+        Footer Area
+    ==============================-->
+  <div class="vs-footer bg-title">
+    <div class="vs-footer__top z-index-common space-extra-top space-extra-bottom">
+      <img src="assets/img/icon edjs-22.png" alt="Footer Element" class="vs-footer__ele1 wow animate__fadeInLeft" data-wow-delay="0.25s" style="width: 120px; height: 120px;">
+      <img src="assets/img/footer/footer-element-2.png" alt="Footer Element" class="vs-footer__ele2">
+      <div class="vs-balls vs-balls--screen" data-balls-top="-6px" data-balls-color="#ffffff"></div>
+      <div class="container">
+        <div class="row gy-4 gx-xxl-5">
+          <div class="col-lg-4 col-md-6 wow animate__fadeInUp" data-wow-delay="0.25s">
+            <div class="vs-footer__widget">
+              <div class="vs-footer__logo text-center text-md-start mb-25">
+                <a href="index.html" class="vs-footer__logo-link">
+                  <img src="assets/img/edjs logo black@4x.png" alt="EDJS" style="height: 50px; width: auto; filter: brightness(0) invert(1);">
+                </a>
+              </div>
+              <p class="vs-footer__desc text-center text-md-start" style="color: #999999;">
+                EDJS propose des spectacles théâtraux éducatifs et
+                des ateliers créatifs pour enfants.
+              </p>
+              <div class="icon-call justify-content-center justify-content-md-start pt-10 mb-10">
+                <span class="icon-call__icon"><i class="fa-solid fa-phone-rotary"></i></span>
+                <div class="icon-call__content">
+                  <span class="icon-call__title">support téléphonique</span>
+                  <a href="tel:+1344688955" class="icon-call__number">+1 344 688 955</a>
+                </div>
+              </div>
+              <div class="social-style social-style--version2 w-100 justify-content-center justify-content-md-start pt-25">
+                <span class="social-style__label">suivez-nous :</span>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow animate__fadeInUp" data-wow-delay="0.35s">
+            <div class="vs-footer__widget">
+              <h3 class="vs-footer__title" style="color: #cccccc;">Navigation</h3>
+              <div class="vs-footer__menu">
+                <ul class="vs-footer__menu--list">
+                  <li><a href="index.html">Accueil</a></li>
+                  <li><a href="about.html">À Propos</a></li>
+                  <li><a href="spectacles.html">Spectacles</a></li>
+                  <li><a href="gallery.html">Galerie</a></li>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow animate__fadeInUp" data-wow-delay="0.45s">
+            <div class="vs-footer__widget">
+              <h3 class="vs-footer__title" style="color: #cccccc;">Instagram</h3>
+              <div class="sidebar-gallery" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+                <div class="gallery-thumb" style="aspect-ratio: 1; overflow: hidden;">
+                  <img src="assets/img/Les_Trois_Brigands_Web_026.jpg" alt="Gallery Image" style="width: 100%; height: 100%; object-fit: cover;">
+                  <a href="assets/img/Les_Trois_Brigands_Web_026.jpg" class="popup-image gal-btn"><i class="fal fa-plus" style="color: white;"></i></a>
+                </div>
+                <div class="gallery-thumb" style="aspect-ratio: 1; overflow: hidden;">
+                  <img src="assets/img/Casse-Noisette_Web_007.jpg" alt="Gallery Image" style="width: 100%; height: 100%; object-fit: cover;">
+                  <a href="assets/img/Casse-Noisette_Web_007.jpg" class="popup-image gal-btn"><i class="fal fa-plus" style="color: white;"></i></a>
+                </div>
+                <div class="gallery-thumb" style="aspect-ratio: 1; overflow: hidden;">
+                  <img src="assets/img/Le_Petit_Prince_Web_032.jpg" alt="Gallery Image" style="width: 100%; height: 100%; object-fit: cover;">
+                  <a href="assets/img/Le_Petit_Prince_Web_032.jpg" class="popup-image gal-btn"><i class="fal fa-plus" style="color: white;"></i></a>
+                </div>
+                <div class="gallery-thumb" style="aspect-ratio: 1; overflow: hidden;">
+                  <img src="assets/img/Gretel_Hansel_Web_023.jpg" alt="Gallery Image" style="width: 100%; height: 100%; object-fit: cover;">
+                  <a href="assets/img/Gretel_Hansel_Web_023.jpg" class="popup-image gal-btn"><i class="fal fa-plus" style="color: white;"></i></a>
+                </div>
+                <div class="gallery-thumb" style="aspect-ratio: 1; overflow: hidden;">
+                  <img src="assets/img/Dans_la_peau_de_Cyrano_Web_016.jpg" alt="Gallery Image" style="width: 100%; height: 100%; object-fit: cover;">
+                  <a href="assets/img/Dans_la_peau_de_Cyrano_Web_016.jpg" class="popup-image gal-btn"><i class="fal fa-plus" style="color: white;"></i></a>
+                </div>
+                <div class="gallery-thumb" style="aspect-ratio: 1; overflow: hidden;">
+                  <img src="assets/img/Tara_Sur_La_Lune_Web_012.jpg" alt="Gallery Image" style="width: 100%; height: 100%; object-fit: cover;">
+                  <a href="assets/img/Tara_Sur_La_Lune_Web_012.jpg" class="popup-image gal-btn"><i class="fal fa-plus" style="color: white;"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="vs-footer__bottom bg-theme-color-1">
+      <div class="container">
+        <div class="row gy-3 gx-5 align-items-center justify-content-center justify-content-lg-between flex-column-reverse flex-lg-row">
+          <div class="col-md-auto">
+            <p class="vs-footer__copyright mb-0" style="color: #999999;">
+              Copyright &copy; <span id="currentYear">2024</span>
+              <a href="index.html">EDJS</a>. Tous droits réservés.
+            </p>
+          </div>
+          <div class="col-md-auto">
+            <ul class="vs-footer__bottom--menu">
+              <li><a href="about.html">Conditions Générales</a></li>
+              <li><a href="about.html">Politique de Confidentialité</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Files -->
+  <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Filter functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const spectacleItems = document.querySelectorAll('.spectacle-item');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const filter = this.getAttribute('data-filter');
+
+          // Update active button
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+
+          // Filter items
+          spectacleItems.forEach(item => {
+            if (filter === 'all' || item.getAttribute('data-category').includes(filter)) {
+              item.style.display = 'block';
+              setTimeout(() => {
+                item.querySelector('.spectacle-card').classList.add('visible');
+              }, 100);
+            } else {
+              item.style.display = 'none';
+              item.querySelector('.spectacle-card').classList.remove('visible');
+            }
+          });
+        });
+      });
+
+      // Animate cards on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      spectacleItems.forEach(item => {
+        observer.observe(item.querySelector('.spectacle-card'));
+      });
+
+      // Set current year in footer
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+      // Initialize all cards as visible on load
+      setTimeout(() => {
+        spectacleItems.forEach(item => {
+          item.querySelector('.spectacle-card').classList.add('visible');
+        });
+      }, 200);
+    });
+  </script>
+
+</body>
+</html>
