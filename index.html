@@ -865,17 +865,70 @@
       50% { opacity: 1; }
     }
 
-    /* Responsive Design */
+    /* Enhanced Mobile Responsive Design */
     @media (max-width: 768px) {
+      .vs-hero {
+        min-height: 100vh;
+      }
+      
+      .vs-hero__content {
+        padding: 20px 0 !important;
+        min-height: 100vh !important;
+      }
+      
+      .hero-content-container {
+        padding: 40px 20px !important;
+        max-width: 100% !important;
+      }
+      
+      .vs-hero__title--main {
+        font-size: 36px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 20px !important;
+      }
+      
+      .vs-hero__title--sub {
+        font-size: 16px !important;
+        margin-bottom: 15px !important;
+      }
+      
+      .vs-hero__desc {
+        font-size: 16px !important;
+        margin-bottom: 25px !important;
+        line-height: 1.5 !important;
+      }
+      
+      .hero-buttons {
+        flex-direction: column !important;
+        gap: 15px !important;
+        align-items: center !important;
+      }
+      
+      .hero-buttons .vs-btn {
+        width: 100% !important;
+        max-width: 280px !important;
+        text-align: center !important;
+        padding: 15px 25px !important;
+      }
+      
       .hero-stats {
         flex-direction: column;
         gap: 1rem;
+        margin-top: 2rem !important;
       }
 
       .vs-hero__direction {
         padding: 0 1rem;
       }
-
+      
+      .floating-shapes .shape {
+        display: none;
+      }
+      
+      .hero-particles {
+        display: none;
+      }
+      
       .vs-swiper-button-next,
       .vs-swiper-button-prev {
         width: 50px;
@@ -964,6 +1017,27 @@
   }
   
   .hero-shape-container .vs-hero__title--sub {
+    font-size: 14px !important;
+  }
+  
+  .vs-hero__title--main {
+    font-size: 28px !important;
+  }
+  
+  .vs-hero__title--sub {
+    font-size: 14px !important;
+  }
+  
+  .vs-hero__desc {
+    font-size: 14px !important;
+  }
+  
+  .hero-content-container {
+    padding: 30px 15px !important;
+  }
+  
+  .hero-buttons .vs-btn {
+    padding: 12px 20px !important;
     font-size: 14px !important;
   }
 }
