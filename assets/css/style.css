@@ -2475,10 +2475,10 @@ input[type=email]::placeholder {
   position: absolute;
   content: "\e426";
   font-family: var(--vs-icon-font);
-  left: 0;
+  font-size: 20px;
   color: var(--vs-theme-color2);
-  font-size: 26px;
-  top: 0;
+  left: 0;
+  top: 2px;
   line-height: 1;
 }
 .vs-list.style2 li {
