@@ -720,26 +720,93 @@
   <!-- User Type Selection Section -->
   <section class="user-type-selection" id="userTypeSection">
     <div class="container">
-      <div class="text-center">
-        <h2 class="filter-title" style="font-size: 3rem; margin-bottom: 20px;">Vous êtes ?</h2>
-        <p class="filter-subtitle" style="font-size: 1.3rem; margin-bottom: 40px; font-weight: 500;">Cliquez sur votre profil pour découvrir les spectacles adaptés</p>
+      <div class="selection-wrapper">
+        <div class="selection-header">
+          <div class="selection-icon">
+            <i class="fas fa-theater-masks"></i>
+          </div>
+          <h2 class="selection-title">Vous êtes ?</h2>
+          <p class="selection-subtitle">Choisissez votre profil pour découvrir nos spectacles sur mesure</p>
+          <div class="selection-divider"></div>
+        </div>
 
-        <div class="user-type-buttons">
-          <button class="user-type-btn" data-type="school">
-            <i class="fas fa-school"></i>
-            <span class="btn-title">École</span>
-            <span class="btn-subtitle">Établissement scolaire</span>
-          </button>
-          <button class="user-type-btn" data-type="association">
-            <i class="fas fa-users"></i>
-            <span class="btn-title">Association</span>
-            <span class="btn-subtitle">Organisation à but non lucratif</span>
-          </button>
-          <button class="user-type-btn" data-type="particulier">
-            <i class="fas fa-user"></i>
-            <span class="btn-title">Particulier</span>
-            <span class="btn-subtitle">Famille ou individu</span>
-          </button>
+        <div class="user-type-grid">
+          <div class="user-type-card" data-type="school">
+            <div class="card-header">
+              <div class="card-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="card-badge">Populaire</div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">École</h3>
+              <p class="card-description">Établissements scolaires publics et privés</p>
+              <ul class="card-features">
+                <li><i class="fas fa-check"></i> Spectacles éducatifs</li>
+                <li><i class="fas fa-check"></i> Adaptés par niveau</li>
+                <li><i class="fas fa-check"></i> Tarifs préférentiels</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <button class="card-btn">
+                <span>Choisir ce profil</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="user-type-card" data-type="association">
+            <div class="card-header">
+              <div class="card-icon">
+                <i class="fas fa-users"></i>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Association</h3>
+              <p class="card-description">Organisations à but non lucratif et centres culturels</p>
+              <ul class="card-features">
+                <li><i class="fas fa-check"></i> Spectacles communautaires</li>
+                <li><i class="fas fa-check"></i> Événements spéciaux</li>
+                <li><i class="fas fa-check"></i> Partenariats possibles</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <button class="card-btn">
+                <span>Choisir ce profil</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="user-type-card" data-type="particulier">
+            <div class="card-header">
+              <div class="card-icon">
+                <i class="fas fa-home"></i>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Particulier</h3>
+              <p class="card-description">Familles et spectateurs individuels</p>
+              <ul class="card-features">
+                <li><i class="fas fa-check"></i> Spectacles familiaux</li>
+                <li><i class="fas fa-check"></i> Sorties en groupe</li>
+                <li><i class="fas fa-check"></i> Réservation facile</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <button class="card-btn">
+                <span>Choisir ce profil</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="selection-footer">
+          <p class="help-text">
+            <i class="fas fa-info-circle"></i>
+            Vous pourrez modifier votre choix à tout moment
+          </p>
         </div>
       </div>
     </div>
@@ -1260,7 +1327,8 @@
   <!-- JavaScript for User Type Selection and Filtering -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const userTypeButtons = document.querySelectorAll('.user-type-btn');
+      const userTypeCards = document.querySelectorAll('.user-type-card');
+      const cardButtons = document.querySelectorAll('.card-btn');
       const userTypeSection = document.getElementById('userTypeSection');
       const filterSection = document.getElementById('filterSection');
       const spectaclesGrid = document.querySelector('.spectacles-grid');
@@ -1275,11 +1343,22 @@
 
       let currentUserType = '';
 
-      // User type selection
-      userTypeButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-          currentUserType = this.dataset.type;
-          showFilters(currentUserType);
+      // User type selection - both card and button clicks
+      userTypeCards.forEach(card => {
+        card.addEventListener('click', function() {
+          const userType = this.getAttribute('data-type');
+          currentUserType = userType;
+          showFilters(userType);
+        });
+      });
+      
+      cardButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const card = this.closest('.user-type-card');
+          const userType = card.getAttribute('data-type');
+          currentUserType = userType;
+          showFilters(userType);
         });
       });
 
