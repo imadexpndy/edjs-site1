@@ -324,7 +324,7 @@
       transition: all 4s ease-in-out;
     }
 
-    /* Curtain fabric texture */
+    /* Luxurious velvet curtain texture */
     #theatre-curtain .left::before,
     #theatre-curtain .right::before {
       content: '';
@@ -333,43 +333,60 @@
       width: 100%;
       height: 100%;
       background: 
+        radial-gradient(ellipse 100px 20px at 20% 10%, rgba(255,255,255,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 80px 15px at 60% 25%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(ellipse 120px 25px at 30% 40%, rgba(255,255,255,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 90px 18px at 70% 55%, rgba(255,255,255,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 110px 22px at 40% 70%, rgba(255,255,255,0.14) 0%, transparent 50%),
+        radial-gradient(ellipse 85px 16px at 80% 85%, rgba(255,255,255,0.09) 0%, transparent 50%),
         repeating-linear-gradient(
-          0deg,
+          135deg,
           transparent 0px,
-          rgba(0,0,0,0.1) 2px,
-          transparent 4px,
-          rgba(255,255,255,0.05) 6px,
-          transparent 8px
-        ),
-        repeating-linear-gradient(
-          90deg,
-          transparent 0px,
-          rgba(0,0,0,0.08) 12px,
-          transparent 24px
+          rgba(0,0,0,0.05) 1px,
+          transparent 3px,
+          rgba(255,255,255,0.02) 4px,
+          transparent 6px
         );
-      box-shadow: inset 0 0 80px rgba(0,0,0,0.3);
+      box-shadow: 
+        inset 0 0 120px rgba(0,0,0,0.4),
+        inset 20px 0 40px rgba(0,0,0,0.2),
+        inset -20px 0 40px rgba(0,0,0,0.2);
     }
 
-    /* Yellow Gold Ropes */
+    /* Horizontal Yellow Gold Ropes */
     #theatre-curtain .left::after,
     #theatre-curtain .right::after {
       content: '';
       position: absolute;
-      top: 25%;
-      width: 20px;
-      height: 50%;
-      background: linear-gradient(180deg, 
+      top: 40%;
+      width: 60%;
+      height: 12px;
+      background: linear-gradient(90deg, 
         #FFD700 0%, 
         #FFA500 25%, 
         #FF8C00 50%, 
         #FFA500 75%, 
         #FFD700 100%);
-      border-radius: 10px;
+      border-radius: 6px;
       box-shadow: 
         0 4px 12px rgba(0,0,0,0.4),
-        inset 0 2px 6px rgba(255,255,255,0.4),
-        inset 0 -2px 6px rgba(0,0,0,0.2);
+        inset 0 2px 4px rgba(255,255,255,0.4),
+        inset 0 -2px 4px rgba(0,0,0,0.2);
       transition: all 4s ease-in-out;
+    }
+
+    /* Rope braided texture */
+    #theatre-curtain .left::after,
+    #theatre-curtain .right::after {
+      background: 
+        repeating-linear-gradient(
+          45deg,
+          #FFD700 0px,
+          #FFA500 3px,
+          #FF8C00 6px,
+          #FFA500 9px,
+          #FFD700 12px
+        );
     }
 
     #theatre-curtain .left {
@@ -382,13 +399,13 @@
       transform-origin: top left;
     }
 
-    /* Position ropes in center of each curtain */
+    /* Position horizontal ropes in center of each curtain */
     #theatre-curtain .left::after {
-      right: 10px;
+      left: 20%;
     }
 
     #theatre-curtain .right::after {
-      left: 10px;
+      left: 20%;
     }
 
     /* Opening Animation */
