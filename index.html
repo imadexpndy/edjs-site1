@@ -286,34 +286,47 @@
       opacity: 0.5;
     }
 
-    /* Modern Theatre Curtain Animation */
-    .theatre-curtains {
+    /* Theatre Curtain Scene */
+    #theatre-scene {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      overflow: hidden;
+      background-color: rgb(0,0,0);
       z-index: 9999;
       pointer-events: none;
     }
 
-    .curtain {
+    #theatre-curtain {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+    }
+
+    /* Red Curtain Panels */
+    #theatre-curtain .left,
+    #theatre-curtain .right {
       position: absolute;
       top: 0;
       width: 50%;
       height: 100%;
       background: linear-gradient(135deg, 
-        #E53E3E 0%, 
-        #C53030 25%, 
-        #E53E3E 50%, 
-        #B91C1C 75%, 
-        #E53E3E 100%);
-      transition: transform 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      overflow: hidden;
+        #DC143C 0%, 
+        #B22222 25%, 
+        #8B0000 50%, 
+        #B22222 75%, 
+        #DC143C 100%);
+      filter: brightness(120%);
+      transition: all 4s ease-in-out;
     }
 
-    /* Fabric texture and folds */
-    .curtain::before {
+    /* Curtain fabric texture */
+    #theatre-curtain .left::before,
+    #theatre-curtain .right::before {
       content: '';
       position: absolute;
       top: 0;
@@ -323,110 +336,94 @@
         repeating-linear-gradient(
           0deg,
           transparent 0px,
-          rgba(0,0,0,0.08) 1px,
-          transparent 2px,
-          rgba(255,255,255,0.03) 3px,
-          transparent 4px
+          rgba(0,0,0,0.1) 2px,
+          transparent 4px,
+          rgba(255,255,255,0.05) 6px,
+          transparent 8px
         ),
         repeating-linear-gradient(
           90deg,
           transparent 0px,
-          rgba(0,0,0,0.05) 8px,
-          transparent 16px,
-          rgba(255,255,255,0.02) 24px,
-          transparent 32px
+          rgba(0,0,0,0.08) 12px,
+          transparent 24px
         );
-      box-shadow: inset 0 0 100px rgba(0,0,0,0.2);
+      box-shadow: inset 0 0 80px rgba(0,0,0,0.3);
     }
 
-    /* Curtain folds and draping */
-    .curtain::after {
+    /* Yellow Gold Ropes */
+    #theatre-curtain .left::after,
+    #theatre-curtain .right::after {
       content: '';
       position: absolute;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: 
-        radial-gradient(ellipse 20px 100px at 15% 0%, rgba(0,0,0,0.15) 0%, transparent 50%),
-        radial-gradient(ellipse 20px 100px at 35% 0%, rgba(0,0,0,0.1) 0%, transparent 50%),
-        radial-gradient(ellipse 20px 100px at 55% 0%, rgba(0,0,0,0.15) 0%, transparent 50%),
-        radial-gradient(ellipse 20px 100px at 75% 0%, rgba(0,0,0,0.1) 0%, transparent 50%),
-        radial-gradient(ellipse 20px 100px at 95% 0%, rgba(0,0,0,0.15) 0%, transparent 50%);
-    }
-
-    .curtain-left {
-      left: 0;
-      transform-origin: left center;
-      border-right: 3px solid rgba(0,0,0,0.1);
-    }
-
-    .curtain-right {
-      right: 0;
-      transform-origin: right center;
-      border-left: 3px solid rgba(0,0,0,0.1);
-    }
-
-    /* Yellow curtain tie */
-    .curtain-rope {
-      position: absolute;
-      top: 30%;
-      width: 40px;
-      height: 15%;
-      background: linear-gradient(135deg, 
-        #F6E05E 0%, 
-        #ECC94B 25%, 
-        #D69E2E 50%, 
-        #ECC94B 75%, 
-        #F6E05E 100%);
-      border-radius: 50px;
+      top: 25%;
+      width: 20px;
+      height: 50%;
+      background: linear-gradient(180deg, 
+        #FFD700 0%, 
+        #FFA500 25%, 
+        #FF8C00 50%, 
+        #FFA500 75%, 
+        #FFD700 100%);
+      border-radius: 10px;
       box-shadow: 
-        0 4px 8px rgba(0,0,0,0.2),
-        inset 0 2px 4px rgba(255,255,255,0.3);
-      transition: transform 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        0 4px 12px rgba(0,0,0,0.4),
+        inset 0 2px 6px rgba(255,255,255,0.4),
+        inset 0 -2px 6px rgba(0,0,0,0.2);
+      transition: all 4s ease-in-out;
     }
 
-    /* Tie texture */
-    .curtain-rope::before {
-      content: '';
-      position: absolute;
-      top: 20%;
-      left: 10%;
-      width: 80%;
-      height: 60%;
-      background: 
-        repeating-linear-gradient(
-          45deg,
-          transparent 0px,
-          rgba(0,0,0,0.05) 1px,
-          transparent 2px
-        );
-      border-radius: 50px;
+    #theatre-curtain .left {
+      left: 0;
+      transform-origin: top right;
     }
 
-    .rope-left {
-      left: 45%;
-      transform: translateX(-50%) rotate(-15deg);
+    #theatre-curtain .right {
+      left: 50%;
+      transform-origin: top left;
     }
 
-    .rope-right {
-      right: 45%;
-      transform: translateX(50%) rotate(15deg);
+    /* Position ropes in center of each curtain */
+    #theatre-curtain .left::after {
+      right: 10px;
     }
 
-    .curtains-open .curtain-left {
-      transform: translateX(-100%);
+    #theatre-curtain .right::after {
+      left: 10px;
     }
 
-    .curtains-open .curtain-right {
-      transform: translateX(100%);
+    /* Opening Animation */
+    #theatre-curtain.open .left,
+    #theatre-curtain.open .right {
+      filter: brightness(100%);
     }
 
-    .curtains-open .rope-left {
-      transform: translateX(-150%) rotate(-25deg);
+    #theatre-curtain.open .left {
+      animation: left-curtain-opening 4s ease-in-out forwards;
     }
 
-    .curtains-open .rope-right {
-      transform: translateX(150%) rotate(25deg);
+    #theatre-curtain.open .right {
+      animation: right-curtain-opening 4s ease-in-out forwards;
+    }
+
+    /* Fade out scene after opening */
+    #theatre-scene.fade-out {
+      animation: scene-fade-out 1s ease-in forwards;
+      animation-delay: 3.5s;
+    }
+
+    @keyframes left-curtain-opening {
+      from { transform: translate(0) rotate(0) scale(1,1); }
+      to { transform: translate(-100%) rotate(20deg) scale(0,2); }
+    }
+
+    @keyframes right-curtain-opening {
+      from { transform: translate(0) rotate(0) scale(1,1); }
+      to { transform: translate(100%) rotate(-20deg) scale(0,2); }
+    }
+
+    @keyframes scene-fade-out {
+      from { opacity: 1; }
+      to { opacity: 0; visibility: hidden; }
     }
 
 
@@ -1206,12 +1203,13 @@
     // Theatre curtain opening animation
     window.addEventListener('load', function() {
       setTimeout(function() {
-        document.getElementById('theatreCurtains').classList.add('curtains-open');
+        var curtain = document.getElementById('theatre-curtain');
+        var scene = document.getElementById('theatre-scene');
         
-        // Remove curtains after animation completes
-        setTimeout(function() {
-          document.getElementById('theatreCurtains').style.display = 'none';
-        }, 3500);
+        if (curtain && scene) {
+          curtain.classList.add('open');
+          scene.classList.add('fade-out');
+        }
       }, 500);
     });
   </script>
@@ -1735,11 +1733,11 @@
         Header layout 2
     ==============================-->
   <!-- Theatre Curtains -->
-  <div class="theatre-curtains" id="theatreCurtains">
-    <div class="curtain curtain-left"></div>
-    <div class="curtain curtain-right"></div>
-    <div class="curtain-rope rope-left"></div>
-    <div class="curtain-rope rope-right"></div>
+  <div id="theatre-scene">
+    <div id="theatre-curtain">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
   </div>
 
   <main class="vs-main">
