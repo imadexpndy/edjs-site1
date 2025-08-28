@@ -452,6 +452,87 @@
       }
     }
 
+    /* User Type Selection Styles */
+    .user-type-selection {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .user-type-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .user-type-btn {
+      background: white;
+      border: 3px solid #e9ecef;
+      border-radius: 20px;
+      padding: 40px 30px;
+      width: 280px;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .user-type-btn:hover {
+      transform: translateY(-8px);
+      border-color: #BDCF00;
+      box-shadow: 0 15px 40px rgba(189, 207, 0, 0.2);
+    }
+
+    .user-type-btn i {
+      font-size: 3rem;
+      color: #6c757d;
+      transition: color 0.3s ease;
+    }
+
+    .user-type-btn:hover i {
+      color: #BDCF00;
+    }
+
+    .btn-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin: 0;
+    }
+
+    .btn-subtitle {
+      font-size: 0.9rem;
+      color: #6c757d;
+      margin: 0;
+    }
+
+    .back-btn {
+      background: #6c757d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 600;
+      margin-bottom: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #495057;
+      transform: translateY(-2px);
+    }
+
+    /* Hide spectacles initially */
+    .spectacles-grid {
+      display: none;
+    }
+
     /* Animation classes */
     .fade-in-up {
       opacity: 0;
@@ -462,6 +543,18 @@
     .fade-in-up.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .user-type-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .user-type-btn {
+        width: 100%;
+        max-width: 300px;
+      }
     }
   </style>
 </head>
@@ -625,31 +718,90 @@
     </div>
   </section>
 
-  <!-- Filter Section -->
-  <section class="filter-section">
+  <!-- User Type Selection Section -->
+  <section class="user-type-selection" id="userTypeSection">
     <div class="container">
       <div class="text-center">
-        <h2 class="filter-title">Choisissez Votre Public</h2>
-        <p class="filter-subtitle">Trouvez le spectacle parfait adapté à votre groupe</p>
+        <h2 class="filter-title">Qui êtes-vous ?</h2>
+        <p class="filter-subtitle">Sélectionnez votre profil pour découvrir les spectacles adaptés</p>
 
-        <div class="filter-buttons">
-          <button class="filter-btn active" data-filter="all">
-            <i class="fas fa-globe"></i> Tous les Spectacles
+        <div class="user-type-buttons">
+          <button class="user-type-btn" data-type="school">
+            <i class="fas fa-school"></i>
+            <span class="btn-title">École</span>
+            <span class="btn-subtitle">Publique ou Privée</span>
           </button>
+          <button class="user-type-btn" data-type="association">
+            <i class="fas fa-users"></i>
+            <span class="btn-title">Association</span>
+            <span class="btn-subtitle">Organisation à but non lucratif</span>
+          </button>
+          <button class="user-type-btn" data-type="particulier">
+            <i class="fas fa-user"></i>
+            <span class="btn-title">Particulier</span>
+            <span class="btn-subtitle">Famille ou individu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Section (Hidden by default) -->
+  <section class="filter-section" id="filterSection" style="display: none;">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="filter-title" id="filterTitle">Filtrez par niveau</h2>
+        <p class="filter-subtitle" id="filterSubtitle">Trouvez le spectacle parfait adapté à votre groupe</p>
+        
+        <button class="back-btn" id="backBtn">
+          <i class="fas fa-arrow-left"></i> Retour
+        </button>
+
+        <!-- School Filters -->
+        <div class="filter-buttons" id="schoolFilters" style="display: none;">
           <button class="filter-btn" data-filter="maternelle">
-            <i class="fas fa-baby"></i> Maternelle
+            <i class="fas fa-baby"></i> Maternelle (3-5 ans)
           </button>
           <button class="filter-btn" data-filter="primaire">
-            <i class="fas fa-child"></i> Primaire
+            <i class="fas fa-child"></i> Primaire (6-11 ans)
           </button>
           <button class="filter-btn" data-filter="college">
-            <i class="fas fa-user-friends"></i> Collège
+            <i class="fas fa-user-friends"></i> Collège (12-15 ans)
           </button>
           <button class="filter-btn" data-filter="lycee">
-            <i class="fas fa-graduation-cap"></i> Lycée
+            <i class="fas fa-graduation-cap"></i> Lycée (16-18 ans)
+          </button>
+        </div>
+
+        <!-- Association Filters -->
+        <div class="filter-buttons" id="associationFilters" style="display: none;">
+          <button class="filter-btn" data-filter="3-6">
+            <i class="fas fa-baby"></i> 3-6 ans
+          </button>
+          <button class="filter-btn" data-filter="7-12">
+            <i class="fas fa-child"></i> 7-12 ans
+          </button>
+          <button class="filter-btn" data-filter="13-17">
+            <i class="fas fa-user-friends"></i> 13-17 ans
           </button>
           <button class="filter-btn" data-filter="famille">
-            <i class="fas fa-heart"></i> Familles
+            <i class="fas fa-heart"></i> Tous âges
+          </button>
+        </div>
+
+        <!-- Particulier Filters -->
+        <div class="filter-buttons" id="particulierFilters" style="display: none;">
+          <button class="filter-btn" data-filter="3-6">
+            <i class="fas fa-baby"></i> 3-6 ans
+          </button>
+          <button class="filter-btn" data-filter="7-12">
+            <i class="fas fa-child"></i> 7-12 ans
+          </button>
+          <button class="filter-btn" data-filter="13-17">
+            <i class="fas fa-user-friends"></i> 13-17 ans
+          </button>
+          <button class="filter-btn" data-filter="famille">
+            <i class="fas fa-heart"></i> Famille (tous âges)
           </button>
         </div>
       </div>
@@ -1135,6 +1287,148 @@
       </div>
     </div>
   </section>
+
+  <!-- JavaScript for User Type Selection and Filtering -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const userTypeButtons = document.querySelectorAll('.user-type-btn');
+      const userTypeSection = document.getElementById('userTypeSection');
+      const filterSection = document.getElementById('filterSection');
+      const spectaclesGrid = document.querySelector('.spectacles-grid');
+      const backBtn = document.getElementById('backBtn');
+      const filterTitle = document.getElementById('filterTitle');
+      const filterSubtitle = document.getElementById('filterSubtitle');
+      const schoolFilters = document.getElementById('schoolFilters');
+      const associationFilters = document.getElementById('associationFilters');
+      const particulierFilters = document.getElementById('particulierFilters');
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const spectacleItems = document.querySelectorAll('.spectacle-item');
+
+      let currentUserType = '';
+
+      // User type selection
+      userTypeButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          currentUserType = this.dataset.type;
+          showFilters(currentUserType);
+        });
+      });
+
+      // Back button
+      backBtn.addEventListener('click', function() {
+        userTypeSection.style.display = 'block';
+        filterSection.style.display = 'none';
+        spectaclesGrid.style.display = 'none';
+        resetFilters();
+      });
+
+      // Filter buttons
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Remove active class from all filter buttons
+          filterButtons.forEach(b => b.classList.remove('active'));
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          const filterValue = this.dataset.filter;
+          filterSpectacles(filterValue, currentUserType);
+          
+          // Show spectacles grid
+          spectaclesGrid.style.display = 'block';
+        });
+      });
+
+      function showFilters(userType) {
+        userTypeSection.style.display = 'none';
+        filterSection.style.display = 'block';
+        
+        // Hide all filter groups
+        schoolFilters.style.display = 'none';
+        associationFilters.style.display = 'none';
+        particulierFilters.style.display = 'none';
+        
+        // Show appropriate filters and update titles
+        switch(userType) {
+          case 'school':
+            filterTitle.textContent = 'Choisissez le niveau scolaire';
+            filterSubtitle.textContent = 'Sélectionnez le niveau adapté à vos élèves';
+            schoolFilters.style.display = 'flex';
+            break;
+          case 'association':
+            filterTitle.textContent = 'Choisissez la tranche d\'âge';
+            filterSubtitle.textContent = 'Sélectionnez l\'âge des participants de votre association';
+            associationFilters.style.display = 'flex';
+            break;
+          case 'particulier':
+            filterTitle.textContent = 'Choisissez la tranche d\'âge';
+            filterSubtitle.textContent = 'Sélectionnez l\'âge adapté à votre famille';
+            particulierFilters.style.display = 'flex';
+            break;
+        }
+      }
+
+      function filterSpectacles(filterValue, userType) {
+        spectacleItems.forEach(item => {
+          let shouldShow = false;
+          
+          // Get the age range from the spectacle's meta information
+          const ageElement = item.querySelector('.meta-item:nth-child(2) span');
+          const ageText = ageElement ? ageElement.textContent : '';
+          
+          // Filter logic based on user type and selected filter
+          if (userType === 'school') {
+            // School filtering by education level
+            if (filterValue === 'maternelle' && (ageText.includes('3-') || ageText.includes('4-') || ageText.includes('5'))) {
+              shouldShow = true;
+            } else if (filterValue === 'primaire' && (ageText.includes('6-') || ageText.includes('7-') || ageText.includes('8-') || ageText.includes('9-') || ageText.includes('10-') || ageText.includes('11'))) {
+              shouldShow = true;
+            } else if (filterValue === 'college' && (ageText.includes('12-') || ageText.includes('13-') || ageText.includes('14-') || ageText.includes('15'))) {
+              shouldShow = true;
+            } else if (filterValue === 'lycee' && (ageText.includes('16-') || ageText.includes('17-') || ageText.includes('18'))) {
+              shouldShow = true;
+            }
+          } else if (userType === 'association' || userType === 'particulier') {
+            // Age-based filtering
+            if (filterValue === '3-6' && (ageText.includes('3-') || ageText.includes('4-') || ageText.includes('5-') || ageText.includes('6'))) {
+              shouldShow = true;
+            } else if (filterValue === '7-12' && (ageText.includes('7-') || ageText.includes('8-') || ageText.includes('9-') || ageText.includes('10-') || ageText.includes('11-') || ageText.includes('12'))) {
+              shouldShow = true;
+            } else if (filterValue === '13-17' && (ageText.includes('13-') || ageText.includes('14-') || ageText.includes('15-') || ageText.includes('16-') || ageText.includes('17'))) {
+              shouldShow = true;
+            } else if (filterValue === 'famille') {
+              shouldShow = true; // Show all spectacles for family option
+            }
+          }
+          
+          // Show/hide the spectacle item
+          item.style.display = shouldShow ? 'block' : 'none';
+        });
+      }
+
+      function resetFilters() {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        spectacleItems.forEach(item => item.style.display = 'block');
+      }
+
+      // Animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-in-up').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
 
   <!--==============================
         Footer Area
