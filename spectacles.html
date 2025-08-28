@@ -144,7 +144,7 @@
     }
 
     .filter-subtitle {
-      color: #6c757d;
+      color: #28a745;
       font-size: 1.1rem;
       margin-bottom: 40px;
     }
@@ -158,8 +158,8 @@
 
     .filter-btn {
       background: #f8f9fa;
-      border: 2px solid #e9ecef;
-      color: #495057;
+      border: 2px solid #28a745;
+      color: #28a745;
       padding: 12px 24px;
       border-radius: 25px;
       font-weight: 600;
@@ -490,7 +490,7 @@
 
     .user-type-btn i {
       font-size: 3rem;
-      color: #6c757d;
+      color: #28a745;
       transition: color 0.3s ease;
     }
 
@@ -507,12 +507,12 @@
 
     .btn-subtitle {
       font-size: 0.9rem;
-      color: #6c757d;
+      color: #28a745;
       margin: 0;
     }
 
     .back-btn {
-      background: #6c757d;
+      background: #28a745;
       color: white;
       border: none;
       padding: 10px 20px;
@@ -524,7 +524,7 @@
     }
 
     .back-btn:hover {
-      background: #495057;
+      background: #1e7e34;
       transform: translateY(-2px);
     }
 
@@ -726,10 +726,15 @@
         <p class="filter-subtitle">Sélectionnez votre profil pour découvrir les spectacles adaptés</p>
 
         <div class="user-type-buttons">
-          <button class="user-type-btn" data-type="school">
+          <button class="user-type-btn" data-type="public-school">
+            <i class="fas fa-university"></i>
+            <span class="btn-title">École Publique</span>
+            <span class="btn-subtitle">Établissement public</span>
+          </button>
+          <button class="user-type-btn" data-type="private-school">
             <i class="fas fa-school"></i>
-            <span class="btn-title">École</span>
-            <span class="btn-subtitle">Publique ou Privée</span>
+            <span class="btn-title">École Privée</span>
+            <span class="btn-subtitle">Établissement privé</span>
           </button>
           <button class="user-type-btn" data-type="association">
             <i class="fas fa-users"></i>
@@ -757,8 +762,24 @@
           <i class="fas fa-arrow-left"></i> Retour
         </button>
 
-        <!-- School Filters -->
-        <div class="filter-buttons" id="schoolFilters" style="display: none;">
+        <!-- Public School Filters -->
+        <div class="filter-buttons" id="publicSchoolFilters" style="display: none;">
+          <button class="filter-btn" data-filter="maternelle">
+            <i class="fas fa-baby"></i> Maternelle (3-5 ans)
+          </button>
+          <button class="filter-btn" data-filter="primaire">
+            <i class="fas fa-child"></i> Primaire (6-11 ans)
+          </button>
+          <button class="filter-btn" data-filter="college">
+            <i class="fas fa-user-friends"></i> Collège (12-15 ans)
+          </button>
+          <button class="filter-btn" data-filter="lycee">
+            <i class="fas fa-graduation-cap"></i> Lycée (16-18 ans)
+          </button>
+        </div>
+
+        <!-- Private School Filters -->
+        <div class="filter-buttons" id="privateSchoolFilters" style="display: none;">
           <button class="filter-btn" data-filter="maternelle">
             <i class="fas fa-baby"></i> Maternelle (3-5 ans)
           </button>
@@ -1298,7 +1319,8 @@
       const backBtn = document.getElementById('backBtn');
       const filterTitle = document.getElementById('filterTitle');
       const filterSubtitle = document.getElementById('filterSubtitle');
-      const schoolFilters = document.getElementById('schoolFilters');
+      const publicSchoolFilters = document.getElementById('publicSchoolFilters');
+      const privateSchoolFilters = document.getElementById('privateSchoolFilters');
       const associationFilters = document.getElementById('associationFilters');
       const particulierFilters = document.getElementById('particulierFilters');
       const filterButtons = document.querySelectorAll('.filter-btn');
@@ -1343,16 +1365,22 @@
         filterSection.style.display = 'block';
         
         // Hide all filter groups
-        schoolFilters.style.display = 'none';
+        publicSchoolFilters.style.display = 'none';
+        privateSchoolFilters.style.display = 'none';
         associationFilters.style.display = 'none';
         particulierFilters.style.display = 'none';
         
         // Show appropriate filters and update titles
         switch(userType) {
-          case 'school':
+          case 'public-school':
             filterTitle.textContent = 'Choisissez le niveau scolaire';
-            filterSubtitle.textContent = 'Sélectionnez le niveau adapté à vos élèves';
-            schoolFilters.style.display = 'flex';
+            filterSubtitle.textContent = 'Sélectionnez le niveau adapté à vos élèves (École Publique)';
+            publicSchoolFilters.style.display = 'flex';
+            break;
+          case 'private-school':
+            filterTitle.textContent = 'Choisissez le niveau scolaire';
+            filterSubtitle.textContent = 'Sélectionnez le niveau adapté à vos élèves (École Privée)';
+            privateSchoolFilters.style.display = 'flex';
             break;
           case 'association':
             filterTitle.textContent = 'Choisissez la tranche d\'âge';
@@ -1376,7 +1404,7 @@
           const ageText = ageElement ? ageElement.textContent : '';
           
           // Filter logic based on user type and selected filter
-          if (userType === 'school') {
+          if (userType === 'public-school' || userType === 'private-school') {
             // School filtering by education level
             if (filterValue === 'maternelle' && (ageText.includes('3-') || ageText.includes('4-') || ageText.includes('5'))) {
               shouldShow = true;
