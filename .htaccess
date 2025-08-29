@@ -3,11 +3,24 @@ RewriteEngine On
 # Remove .html extension from URLs
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
-# Redirect .html URLs to clean URLs
-RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+# Redirect .html URLs to clean URLs (except for direct file access)
+RewriteCond %{THE_REQUEST} \s/+([^.]+)\.html[\s?] [NC]
 RewriteRule ^ /%1? [NC,L,R=301]
+
+# Handle specific spectacle pages
+RewriteRule ^spectacle-alice-chez-les-merveilles/?$ spectacle-alice-chez-les-merveilles.html [NC,L]
+RewriteRule ^spectacle-antigone/?$ spectacle-antigone.html [NC,L]
+RewriteRule ^spectacle-casse-noisette/?$ spectacle-casse-noisette.html [NC,L]
+RewriteRule ^spectacle-charlotte/?$ spectacle-charlotte.html [NC,L]
+RewriteRule ^spectacle-estevanico/?$ spectacle-estevanico.html [NC,L]
+RewriteRule ^spectacle-le-petit-prince/?$ spectacle-le-petit-prince.html [NC,L]
+RewriteRule ^spectacle-leau-la/?$ spectacle-leau-la.html [NC,L]
+RewriteRule ^spectacle-lenfant-de-larbre/?$ spectacle-lenfant-de-larbre.html [NC,L]
+RewriteRule ^spectacle-simple-comme-bonjour/?$ spectacle-simple-comme-bonjour.html [NC,L]
+RewriteRule ^spectacle-tara-sur-la-lune/?$ spectacle-tara-sur-la-lune.html [NC,L]
 
 # Force HTTPS (optional, for production)
 # RewriteCond %{HTTPS} off
