@@ -44,6 +44,58 @@
   <link rel="stylesheet" href="assets/css/animate.min.css">
   <!-- Theme Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Custom 404 Page Styles -->
+  <style>
+    .error-image-container {
+      text-align: center;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .error-hero-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    
+    .error-description {
+      font-size: 18px;
+      color: #666;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .error-area__content {
+      text-align: center;
+    }
+    
+    .error-area__number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    @media (max-width: 768px) {
+      .error-hero-image {
+        height: 250px;
+      }
+      
+      .error-area__number {
+        font-size: 2rem;
+      }
+      
+      .error-description {
+        font-size: 16px;
+        padding: 0 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -422,15 +474,15 @@
   <!-- Breadcrumb -->
   <div class="breadcrumb-wrapper z-index-common overflow-hidden">
     <div class="breadcrumb-wrapper__bg wow animate__fadeInUp" data-wow-delay="0.15s" data-vs-gsap-parallax-speed="2" data-vs-gsap-parallax-zoom>
-      <img src="assets/img/bg/breadcrumb-bg-3.jpg" alt="session bg" />
+      <img src="assets/img/Tara_Sur_La_Lune_Web_020.jpg" alt="École des Jeunes Spectateurs" />
     </div>
     <div class="container">
       <div class="breadcrumb-wrapper__content wow animate__fadeInUp" data-wow-delay="0.45s">
-        <h1 class="breadcrumb-wrapper__title">Page Not Found</h1>
+        <h1 class="breadcrumb-wrapper__title">Page Non Trouvée</h1>
         <div class="breadcrumb-wrapper__menu--wrap">
           <ul class="breadcrumb-wrapper__menu">
-            <li class="breadcrumb-wrapper__menu--item"><a href="/">Home</a></li>
-            <li class="breadcrumb-wrapper__menu--item">404 Page</li>
+            <li class="breadcrumb-wrapper__menu--item"><a href="/">Accueil</a></li>
+            <li class="breadcrumb-wrapper__menu--item">Erreur 404</li>
           </ul>
         </div>
       </div>
@@ -445,18 +497,22 @@
         <div class="error-area__header wow animate__fadeInUp mb-30" data-wow-delay="0.25s">
           <h2 class="error-area__title">
             <span></span>
-            error page
+            page d'erreur
             <span></span>
           </h2>
         </div>
-        <img class="mb-30" src="assets/img/404/error-image-1.png" alt="error">
+        <div class="error-image-container mb-40">
+          <img class="error-hero-image" src="assets/img/Le_Petit_Prince_Web_060.jpg" alt="École des Jeunes Spectateurs - Erreur 404">
+        </div>
         <h2 class="error-area__number wow animate__fadeInUp mb-30 text-capitalize" data-wow-delay="0.45s">
-          oops<span class="text-theme-color2">!</span> that
-          page can't be
-          found
+          oups<span class="text-theme-color2">!</span> cette
+          page est introuvable
         </h2>
+        <p class="error-description mb-40 wow animate__fadeInUp" data-wow-delay="0.35s">
+          La page que vous recherchez n'existe pas ou a été déplacée. Retournez à l'accueil pour découvrir nos spectacles.
+        </p>
         <a href="/" class="vs-btn wow animate__fadeInUp" data-wow-delay="0.45s"><span
-                    class="vs-btn__border"></span>go back homepage</a>
+                    class="vs-btn__border"></span>retour à l'accueil</a>
       </div>
     </div>
   </section>
