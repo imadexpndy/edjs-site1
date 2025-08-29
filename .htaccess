@@ -10,7 +10,9 @@ RewriteRule ^([^\.]+)$ $1.html [NC,L]
 RewriteCond %{THE_REQUEST} \s/+([^.]+)\.html[\s?] [NC]
 RewriteRule ^ /%1? [NC,L,R=301]
 
-# Handle specific spectacle pages
+# Handle specific pages
+RewriteRule ^partners/?$ partners.html [NC,L]
+RewriteRule ^spectacles/?$ spectacles.html [NC,L]
 RewriteRule ^spectacle-alice-chez-les-merveilles/?$ spectacle-alice-chez-les-merveilles.html [NC,L]
 RewriteRule ^spectacle-antigone/?$ spectacle-antigone.html [NC,L]
 RewriteRule ^spectacle-casse-noisette/?$ spectacle-casse-noisette.html [NC,L]
