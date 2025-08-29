@@ -517,6 +517,22 @@ img {
   max-width: 100%;
 }
 
+/* Override for logo specifically */
+.vs-header__logo img {
+  max-width: none !important;
+  height: 100px !important;
+  width: auto !important;
+}
+
+.vs-header__logo {
+  max-width: none !important;
+  width: auto !important;
+}
+
+.col {
+  max-width: none !important;
+}
+
 ins {
   text-decoration: none;
 }
@@ -4849,13 +4865,23 @@ a.text-theme:hover,
 .vs-header__logo {
   padding: 20px 0;
 }
+.vs-header__logo img {
+  height: 100px !important;
+  width: auto !important;
+  max-width: none !important;
+}
 .vs-header__logo.style2 img {
   opacity: 1;
   /* Small devices */
 }
 @media (max-width: 767px) {
+  .vs-header__logo img {
+    height: 80px !important;
+    max-width: none !important;
+  }
   .vs-header__logo.style2 img {
-    max-width: 180px;
+    max-width: none !important;
+    height: 80px !important;
   }
 }
 .vs-header--style2::before {

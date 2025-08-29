@@ -36,6 +36,14 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
   <style>
+    /* Header Menu Hover Color Fix */
+    .vs-header .main-menu ul li a svg path {
+      fill: #BDCF00 !important;
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
     /* Modern Spectacles Page Styles */
     body {
       background-color: #f8f9fa;
@@ -157,15 +165,122 @@
     }
 
     .filter-btn {
-      background: #f8f9fa;
-      border: 2px solid #28a745;
-      color: #28a745;
-      padding: 12px 24px;
+      background: white;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      margin: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .school-type-selection {
+      margin: 2rem 0;
+    }
+
+    .school-type-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .school-type-btn {
+      background: white;
+      border: 3px solid #e0e0e0;
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      min-width: 280px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .school-type-btn:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(189, 207, 0, 0.2);
+    }
+
+    .school-type-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(189, 207, 0, 0.1), transparent);
+      transition: left 0.5s;
+    }
+
+    .school-type-btn:hover::before {
+      left: 100%;
+    }
+
+    .school-type-btn .card-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .school-type-btn .card-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(189, 207, 0, 0.1);
+      border: 3px solid rgba(189, 207, 0, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      transition: all 0.3s ease;
+    }
+
+    .school-type-btn:hover .card-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .school-type-btn .card-icon i {
+      font-size: 2.2rem;
+      color: var(--primary-color);
+    }
+
+    .school-type-btn .card-content h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .school-type-btn .card-content p {
+      font-size: 0.9rem;
+      color: var(--primary-color);
+      margin: 0 0 1.5rem 0;
+    }
+
+    .school-type-btn .card-btn {
+      background: #BDCF00;
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
       border-radius: 25px;
       font-weight: 600;
-      transition: all 0.3s ease;
       cursor: pointer;
-      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .school-type-btn:hover .card-btn {
+      background: #BDCF00;
+      transform: translateY(-2px);
     }
 
     .filter-btn:hover,
@@ -507,24 +622,27 @@
 
     .btn-subtitle {
       font-size: 0.9rem;
-      color: #28a745;
+      color: var(--primary-color);
       margin: 0;
     }
 
     .back-btn {
-      background: #28a745;
+      background: var(--primary-color);
       color: white;
       border: none;
-      padding: 10px 20px;
+      padding: 0.75rem 1.5rem;
       border-radius: 25px;
       font-weight: 600;
-      margin-bottom: 30px;
       cursor: pointer;
+      margin-bottom: 2rem;
       transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .back-btn:hover {
-      background: #1e7e34;
+      background: #a8b800;
       transform: translateY(-2px);
     }
 
@@ -736,7 +854,7 @@
               </div>
             </div>
             <div class="card-content">
-              <h3 class="card-title">École</h3>
+              <h3 class="card-title" style="font-size: 2rem; font-weight: 700;">École</h3>
               <p class="card-description">Établissements scolaires publics et privés</p>
             </div>
             <div class="card-footer">
@@ -754,7 +872,7 @@
               </div>
             </div>
             <div class="card-content">
-              <h3 class="card-title">Association</h3>
+              <h3 class="card-title" style="font-size: 2rem; font-weight: 700;">Association</h3>
               <p class="card-description">Organisations à but non lucratif et centres culturels</p>
             </div>
             <div class="card-footer">
@@ -772,7 +890,7 @@
               </div>
             </div>
             <div class="card-content">
-              <h3 class="card-title">Particulier</h3>
+              <h3 class="card-title" style="font-size: 2rem; font-weight: 700;">Particulier</h3>
               <p class="card-description">Familles et spectateurs individuels</p>
             </div>
             <div class="card-footer">
@@ -804,6 +922,47 @@
         <button class="back-btn" id="backBtn">
           <i class="fas fa-arrow-left"></i> Retour
         </button>
+
+        <!-- School Type Selection -->
+        <div class="school-type-selection" id="schoolTypeSelection" style="display: none;">
+          <h3 style="margin-bottom: 2rem; color: #2c3e50;">Type d'établissement</h3>
+          <div class="school-type-buttons">
+            <div class="school-type-btn" data-school-type="public">
+              <div class="card-header">
+                <div class="card-icon">
+                  <i class="fas fa-university"></i>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>École Publique</h3>
+                <p>Établissements scolaires publics</p>
+              </div>
+              <div class="card-footer">
+                <button class="card-btn">
+                  <span>Choisir ce type</span>
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+            <div class="school-type-btn" data-school-type="private">
+              <div class="card-header">
+                <div class="card-icon">
+                  <i class="fas fa-graduation-cap"></i>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>École Privée</h3>
+                <p>Établissements scolaires privés</p>
+              </div>
+              <div class="card-footer">
+                <button class="card-btn">
+                  <span>Choisir ce type</span>
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- School Filters -->
         <div class="filter-buttons" id="schoolFilters" style="display: none;">
@@ -1306,6 +1465,262 @@
     </div>
   </section>
 
+  <!-- Vs Session Time Area -->
+  <section class="vs-session--area space space-extra-bottom bg-theme-color-1 z-index-common overflow-hidden">
+    <div class="vs-session--bg-image" data-vs-gsap-parallax-speed="5" data-vs-gsap-parallax-zoom>
+      <img src="assets/img/Tara_Sur_La_Lune_Web_020.jpg" alt="Tara Sur La Lune">
+    </div>
+    <div class="vs-session--ele1" data-vs-gsap-parallax-speed="2" data-vs-gsap-parallax-zoom>
+      <img src="assets/img/session/session-ele-1.png" alt="session ele">
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7 wow animate__fadeInUp" data-wow-delay="0.15s">
+          <div class="vs-title text-center title-anime animation-style2">
+            <div class="title-anime__wrap">
+              <span class="vs-title__sub text-white">Prochaines Séances</span>
+              <h2 class="vs-title__main text-white px-xl-5">Réservez Vos Places
+                Maintenant</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-10">
+          <div class="row gx-30">
+            <div class="col-lg-6 wow animate__fadeInUp" data-wow-delay="0.2s">
+              <div class="vs-session">
+                <img class="vs-session__bg" src="assets/img/elements/session-main-block.png" alt="">
+                <div class="vs-session__content">
+                  <h3 class="vs-session__title">Le Petit Prince</h3>
+                  <time class="vs-session__time" datetime="14:00">du 3 au 7 à Rabat | du 8 au 11 à Casablanca</time>
+                </div>
+                <span class="vs-session__icon">
+                  <span style="font-size: 16px; font-weight: bold; color: white;">OCT</span>
+                </span>
+              </div>
+            </div>
+            <div class="col-lg-6 wow animate__fadeInUp" data-wow-delay="0.3s">
+              <div class="vs-session">
+                <img class="vs-session__bg" src="assets/img/elements/session-main-block.png" alt="">
+                <div class="vs-session__content">
+                  <h3 class="vs-session__title">L'eau-là</h3>
+                  <time class="vs-session__time" datetime="16:00">du 7 au 11 à Rabat | du 12 au 15 à Casablanca</time>
+                </div>
+                <span class="vs-session__icon">
+                  <span style="font-size: 16px; font-weight: bold; color: white;">NOV</span>
+                </span>
+              </div>
+            </div>
+            <div class="col-lg-6 wow animate__fadeInUp" data-wow-delay="0.4s">
+              <div class="vs-session">
+                <img class="vs-session__bg" src="assets/img/elements/session-main-block.png" alt="">
+                <div class="vs-session__content">
+                  <h3 class="vs-session__title">Simple comme bonjour !</h3>
+                  <time class="vs-session__time" datetime="15:00">du 12 au 16 à Rabat | du 17 au 20 à Casablanca</time>
+                </div>
+                <span class="vs-session__icon">
+                  <span style="font-size: 16px; font-weight: bold; color: white;">DÉC</span>
+                </span>
+              </div>
+            </div>
+            <div class="col-lg-6 wow animate__fadeInUp" data-wow-delay="0.5s">
+              <div class="vs-session">
+                <img class="vs-session__bg" src="assets/img/elements/session-main-block.png" alt="">
+                <div class="vs-session__content">
+                  <h3 class="vs-session__title">Charlotte</h3>
+                  <time class="vs-session__time" datetime="14:30">du 23 au 27 à Rabat | du 28 au 31 à Casablanca</time>
+                </div>
+                <span class="vs-session__icon">
+                  <span style="font-size: 16px; font-weight: bold; color: white;">JAN</span>
+                </span>
+              </div>
+            </div>
+            <div class="col-lg-6 wow animate__fadeInUp" data-wow-delay="0.6s">
+              <div class="vs-session">
+                <img class="vs-session__bg" src="assets/img/elements/session-main-block.png" alt="">
+                <div class="vs-session__content">
+                  <h3 class="vs-session__title">Estevanico</h3>
+                  <time class="vs-session__time" datetime="14:30">du 13 au 17 à Rabat | du 18 au 21 à Casablanca</time>
+                </div>
+                <span class="vs-session__icon">
+                  <span style="font-size: 16px; font-weight: bold; color: white;">FÉV</span>
+                </span>
+              </div>
+            </div>
+            <div class="col-lg-6 wow animate__fadeInUp" data-wow-delay="0.7s">
+              <div class="vs-session">
+                <img class="vs-session__bg" src="assets/img/elements/session-main-block.png" alt="">
+                <div class="vs-session__content">
+                  <h3 class="vs-session__title">L'enfant de l'arbre</h3>
+                  <time class="vs-session__time" datetime="14:30">du 27 au 31 à Rabat | du 1 au 4 avril à Casablanca</time>
+                </div>
+                <span class="vs-session__icon">
+                  <span style="font-size: 16px; font-weight: bold; color: white;">MAR</span>
+                </span>
+              </div>
+            </div>
+            <div class="col-lg-6 wow animate__fadeInUp" data-wow-delay="0.8s">
+              <div class="vs-session">
+                <img class="vs-session__bg" src="assets/img/elements/session-main-block.png" alt="">
+                <div class="vs-session__content">
+                  <h3 class="vs-session__title">Antigone</h3>
+                  <time class="vs-session__time" datetime="14:30">du 17 au 21 à Rabat | du 22 au 25 à Casablanca</time>
+                </div>
+                <span class="vs-session__icon">
+                  <span style="font-size: 16px; font-weight: bold; color: white;">AVR</span>
+                </span>
+              </div>
+            </div>
+            <div class="col-lg-6 wow animate__fadeInUp" data-wow-delay="0.9s">
+              <div class="vs-session">
+                <img class="vs-session__bg" src="assets/img/elements/session-main-block.png" alt="">
+                <div class="vs-session__content">
+                  <h3 class="vs-session__title">Alice chez les merveilles</h3>
+                  <time class="vs-session__time" datetime="14:30">du 15 au 19 à Rabat | du 20 au 23 à Casablanca</time>
+                </div>
+                <span class="vs-session__icon">
+                  <span style="font-size: 16px; font-weight: bold; color: white;">MAI</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="vs-balls vs-balls--screen" data-balls-top="-6px" data-balls-color="#F8F8F8"></div>
+    <div class="vs-balls vs-balls--screen" data-balls-bottm="-6px" data-balls-color="#F8F8F8"></div>
+  </section>
+  <!-- Vs Session Time Area End -->
+
+  <!-- Class -->
+  <section class="vs-class--area space-extra-top space-extra-bottom z-index-common overflow-hidden" style="background-image: url('assets/img/Asset 9@4x.png') !important; background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important; background-color: #f8f9fa !important; position: relative;">
+    
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="vs-title text-center title-anime animation-style2">
+            <div class="title-anime__wrap">
+              <span class="vs-title__sub">Nos Spectacles</span>
+              <h2 class="vs-title__main">Découvrez Notre Répertoire</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="z-index-common" style="position: relative; z-index: 2;">
+        <div class="row gx-30">
+          <div class="col-xl-3 col-lg-4 col-md-6 wow animate__fadeInUp" data-wow-delay="0.25s">
+            <div class="vs-class">
+              <div class="vs-class__figure">
+                <a class="vs-class__figure--link" href="spectacles.html">
+                  <img class="vs-class__figure--img" src="assets/img/4x/Asset 1@4x.png" alt="Casse-Noisette" style="object-fit: contain !important; padding: 10px; background: white; border-radius: 15px;">
+                  <div class="vs-class__icon--wrap">
+                    <span class="vs-class__icon vs-class__icon--color1">
+                    <img src="assets/img/icon edjs-11.png" alt="Spectacle Icon" style="width: 35px; height: 35px;">
+                  </span>
+                  </div>
+                </a>
+              </div>
+              <div class="vs-class__content">
+                <a class="vs-class__heading--link" href="spectacles.html">
+                  <h3 class="vs-class__heading">Casse-Noisette</h3>
+                </a>
+                <p class="vs-class__text">
+                  Un spectacle magique qui transporte les enfants dans l'univers féerique du ballet classique.
+                </p>
+              </div>
+              <div class="vs-class__bottom">
+                <a href="spectacles.html" class="vs-class__link">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 wow animate__fadeInUp" data-wow-delay="0.45s">
+            <div class="vs-class">
+              <div class="vs-class__figure">
+                <a class="vs-class__figure--link" href="spectacles.html">
+                  <img class="vs-class__figure--img" src="assets/img/4x/Asset 2@4x.png" alt="Le Petit Prince" style="object-fit: contain !important; padding: 10px; background: white; border-radius: 15px;">
+                  <div class="vs-class__icon--wrap">
+                    <span class="vs-class__icon vs-class__icon--color2">
+                    <img src="assets/img/icon edjs-12.png" alt="Spectacle Icon" style="width: 35px; height: 35px;">
+                  </span>
+                  </div>
+                </a>
+              </div>
+              <div class="vs-class__content">
+                <a class="vs-class__heading--link" href="spectacles.html">
+                  <h3 class="vs-class__heading">Le Petit Prince</h3>
+                </a>
+                <p class="vs-class__text">
+                  L'histoire intemporelle du Petit Prince adaptée pour émerveiller petits et grands.
+                </p>
+              </div>
+              <div class="vs-class__bottom">
+                <a href="spectacles.html" class="vs-class__link">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 wow animate__fadeInUp" data-wow-delay="0.65s">
+            <div class="vs-class">
+              <div class="vs-class__figure">
+                <a class="vs-class__figure--link" href="spectacles.html">
+                  <img class="vs-class__figure--img" src="assets/img/4x/Asset 3@4x.png" alt="Tara Sur La Lune" style="object-fit: contain !important; padding: 10px; background: white; border-radius: 15px;">
+                  <div class="vs-class__icon--wrap">
+                    <span class="vs-class__icon vs-class__icon--color3">
+                    <img src="assets/img/icon edjs-18.png" alt="Spectacle Icon" style="width: 35px; height: 35px;">
+                  </span>
+                  </div>
+                </a>
+              </div>
+              <div class="vs-class__content">
+                <a class="vs-class__heading--link" href="spectacles.html">
+                  <h3 class="vs-class__heading">Tara Sur La Lune</h3>
+                </a>
+                <p class="vs-class__text">
+                  Une aventure spatiale captivante qui stimule l'imagination et la curiosité scientifique.
+                </p>
+              </div>
+              <div class="vs-class__bottom">
+                <a href="spectacles.html" class="vs-class__link">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 wow animate__fadeInUp" data-wow-delay="0.85s">
+            <div class="vs-class">
+              <div class="vs-class__figure">
+                <a class="vs-class__figure--link" href="spectacles.html">
+                  <img class="vs-class__figure--img" src="assets/img/4x/Asset 4@4x.png" alt="Charlotte" style="object-fit: contain !important; padding: 10px; background: white; border-radius: 15px;">
+                  <div class="vs-class__icon--wrap">
+                    <span class="vs-class__icon vs-class__icon--color4">
+                    <img src="assets/img/icon edjs-19.png" alt="Spectacle Icon" style="width: 35px; height: 35px;">
+                  </span>
+                  </div>
+                </a>
+              </div>
+              <div class="vs-class__content">
+                <a class="vs-class__heading--link" href="spectacles.html">
+                  <h3 class="vs-class__heading">Charlotte</h3>
+                </a>
+                <p class="vs-class__text">
+                  Un spectacle émouvant qui explore les thèmes de l'amitié et de la découverte de soi.
+                </p>
+              </div>
+              <div class="vs-class__bottom">
+                <a href="spectacles.html" class="vs-class__link">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Class End -->
+
   <!-- JavaScript for User Type Selection and Filtering -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -1330,7 +1745,12 @@
         card.addEventListener('click', function() {
           const userType = this.getAttribute('data-type');
           currentUserType = userType;
-          showFilters(userType);
+          
+          if (userType === 'school') {
+            showSchoolTypeSelection();
+          } else {
+            showAllSpectacles(userType);
+          }
         });
       });
       
@@ -1340,8 +1760,25 @@
           const card = this.closest('.user-type-card');
           const userType = card.getAttribute('data-type');
           currentUserType = userType;
-          showFilters(userType);
+          
+          if (userType === 'school') {
+            showSchoolTypeSelection();
+          } else {
+            showAllSpectacles(userType);
+          }
         });
+      });
+
+      // School type selection handlers - handle both card and button clicks
+      document.addEventListener('click', function(e) {
+        const schoolTypeBtn = e.target.closest('.school-type-btn');
+        if (schoolTypeBtn) {
+          e.preventDefault();
+          e.stopPropagation();
+          const schoolType = schoolTypeBtn.getAttribute('data-school-type');
+          console.log('School type selected:', schoolType); // Debug log
+          showAllSpectacles('school', schoolType);
+        }
       });
 
       // Back button
@@ -1351,6 +1788,67 @@
         spectaclesGrid.style.display = 'none';
         resetFilters();
       });
+
+      // Show school type selection
+      function showSchoolTypeSelection() {
+        userTypeSection.style.display = 'none';
+        filterSection.style.display = 'block';
+        
+        filterTitle.textContent = 'Type d\'établissement';
+        filterSubtitle.textContent = 'Sélectionnez votre type d\'établissement scolaire';
+        
+        // Hide all filter sections
+        schoolFilters.style.display = 'none';
+        associationFilters.style.display = 'none';
+        particulierFilters.style.display = 'none';
+        
+        // Show school type selection
+        document.getElementById('schoolTypeSelection').style.display = 'block';
+      }
+
+      // Show all spectacles first, then allow filtering
+      function showAllSpectacles(userType, schoolType = null) {
+        userTypeSection.style.display = 'none';
+        filterSection.style.display = 'block';
+        
+        // Hide school type selection
+        document.getElementById('schoolTypeSelection').style.display = 'none';
+        
+        // Update title based on user type
+        if (userType === 'school') {
+          filterTitle.textContent = schoolType === 'public' ? 'École Publique - Nos Spectacles' : 'École Privée - Nos Spectacles';
+          filterSubtitle.textContent = 'Découvrez tous nos spectacles, puis filtrez par niveau si souhaité';
+        } else if (userType === 'association') {
+          filterTitle.textContent = 'Association - Nos Spectacles';
+          filterSubtitle.textContent = 'Découvrez tous nos spectacles, puis filtrez par âge si souhaité';
+        } else {
+          filterTitle.textContent = 'Particulier - Nos Spectacles';
+          filterSubtitle.textContent = 'Découvrez tous nos spectacles disponibles';
+        }
+        
+        // Show appropriate filter buttons
+        if (userType === 'school') {
+          schoolFilters.style.display = 'flex';
+          associationFilters.style.display = 'none';
+          particulierFilters.style.display = 'none';
+        } else if (userType === 'association') {
+          schoolFilters.style.display = 'none';
+          associationFilters.style.display = 'flex';
+          particulierFilters.style.display = 'none';
+        } else {
+          schoolFilters.style.display = 'none';
+          associationFilters.style.display = 'none';
+          particulierFilters.style.display = 'flex';
+        }
+        
+        // Show spectacles grid
+        spectaclesGrid.style.display = 'block';
+        
+        // Show all spectacles initially
+        spectacleItems.forEach(item => {
+          item.style.display = 'block';
+        });
+      }
 
       // Filter buttons
       filterButtons.forEach(btn => {
@@ -1465,7 +1963,6 @@
     ==============================-->
   <div class="vs-footer bg-title">
     <div class="vs-footer__top z-index-common space-extra-top space-extra-bottom">
-      <img src="assets/img/icon edjs-22.png" alt="Footer Element" class="vs-footer__ele1 wow animate__fadeInLeft" data-wow-delay="0.25s" style="width: 120px; height: 120px;">
       <img src="assets/img/footer/footer-element-2.png" alt="Footer Element" class="vs-footer__ele2">
       <div class="vs-balls vs-balls--screen" data-balls-top="-6px" data-balls-color="#ffffff"></div>
       <div class="container">
@@ -1474,7 +1971,7 @@
             <div class="vs-footer__widget">
               <div class="vs-footer__logo text-center text-md-start mb-25">
                 <a href="index.html" class="vs-footer__logo-link">
-                  <img src="assets/img/edjs logo black@4x.png" alt="EDJS" style="height: 50px; width: auto; filter: brightness(0) invert(1);">
+                  <img src="assets/img/Asset 2@4x.png" alt="EDJS" style="height: 120px; width: auto; max-width: none !important;">
                 </a>
               </div>
               <p class="vs-footer__desc text-center text-md-start" style="color: #999999;">

@@ -38,6 +38,419 @@
   <link rel="stylesheet" href="assets/css/animate.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 
+  <style>
+    /* Header Menu Hover Color Fix */
+    .vs-header .main-menu ul li a svg path {
+      fill: #BDCF00 !important;
+    }
+  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    :root {
+      --primary-color: #BDCF00;
+      --text-dark: #2c3e50;
+      --text-light: #6c757d;
+      --bg-light: #f8f9fa;
+      --border-light: #e9ecef;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .spectacle-hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 6rem 0;
+    }
+    
+    .min-vh-75 {
+      min-height: 75vh;
+    }
+    
+    .floating-shape {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .shape-1 {
+      width: 100px;
+      height: 100px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+    
+    .shape-2 {
+      width: 60px;
+      height: 60px;
+      top: 60%;
+      right: 15%;
+      animation-delay: 2s;
+    }
+    
+    .shape-3 {
+      width: 80px;
+      height: 80px;
+      bottom: 20%;
+      left: 20%;
+      animation-delay: 4s;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+    
+    .hero-image img:hover {
+      transform: rotate(0deg) scale(1.05);
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2) !important;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-badge {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-family: 'Amatic SC', cursive;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      opacity: 0.9;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0.95;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .info-pills {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .info-pill {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .reservation-btn {
+      background: white;
+      color: var(--primary-color);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 2rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .reservation-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      color: var(--primary-color);
+    }
+
+    .hero-image {
+      position: relative;
+      margin-top: 2rem;
+    }
+
+    .hero-image img {
+      width: 400px;
+      height: 267px;
+      object-fit: cover;
+      border-radius: 1rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .content-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border-light);
+    }
+
+    .content-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .card-title {
+      color: var(--text-dark);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .card-title i {
+      color: var(--primary-color);
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .feature-item:last-child {
+      border-bottom: none;
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .numbered-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .numbered-item:last-child {
+      border-bottom: none;
+    }
+
+    .number-badge {
+      width: 30px;
+      height: 30px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .sidebar-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-light);
+    }
+
+    .sidebar-card h3 {
+      color: var(--text-dark);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .sidebar-card h3 i {
+      color: var(--primary-color);
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+      color: var(--text-light);
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .info-item i {
+      color: var(--primary-color);
+      width: 20px;
+    }
+
+    .showtime-item {
+      background: var(--bg-light);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .showtime-date {
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.25rem;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .showtime-time {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .showtime-btn {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all 0.3s ease;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .showtime-btn:hover {
+      background: #a8b800;
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @media (max-width: 768px) {
+      .spectacle-hero {
+        min-height: 60vh;
+        padding: 3rem 0;
+      }
+      .hero-title { 
+        font-size: 2.8rem; 
+      }
+      .hero-subtitle { 
+        font-size: 1.1rem; 
+      }
+      .hero-description { 
+        font-size: 1rem; 
+        padding: 0 1rem;
+      }
+      .info-pills { 
+        gap: 0.5rem; 
+        padding: 0 1rem;
+      }
+      .hero-image img { 
+        width: 320px; 
+        height: 213px; 
+      }
+      .content-card { 
+        padding: 1.5rem; 
+        margin: 0 1rem 2rem 1rem;
+      }
+      .sidebar-card {
+        margin: 0 1rem 1.5rem 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .spectacle-hero {
+        min-height: 50vh;
+        padding: 2rem 0;
+      }
+      .hero-title { 
+        font-size: 2.2rem; 
+      }
+      .hero-subtitle { 
+        font-size: 1rem; 
+      }
+      .hero-description { 
+        font-size: 0.9rem; 
+      }
+      .hero-image img { 
+        width: 280px; 
+        height: 187px; 
+      }
+      .content-card { 
+        padding: 1rem; 
+      }
+      .sidebar-card {
+        padding: 1rem;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -170,116 +583,98 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="vs-hero-wrapper position-relative" style="min-height: 70vh; display: flex; align-items: center;">
-  <style>
-    @media (max-width: 768px) {
-      .vs-hero-wrapper {
-        min-height: 60vh !important;
-        padding: 40px 0 !important;
-      }
-      
-      .vs-hero-content {
-        padding: 20px !important;
-      }
-      
-      .vs-hero-title {
-        font-size: 2.5rem !important;
-        margin-bottom: 20px !important;
-      }
-      
-      .vs-hero-text {
-        font-size: 1.1rem !important;
-        margin-bottom: 25px !important;
-      }
-      
-      .vs-hero-btns {
-        flex-direction: column !important;
-        gap: 15px !important;
-        align-items: center !important;
-      }
-      
-      .vs-hero-btns .vs-btn {
-        width: 100% !important;
-        max-width: 280px !important;
-        text-align: center !important;
-      }
-      
-      .hero-stats {
-        flex-direction: column !important;
-        gap: 20px !important;
-        margin-top: 30px !important;
-      }
-      
-      .stat-number {
-        font-size: 2rem !important;
-      }
-    }
+  <div class="spectacle-hero">
+    <!-- Decorative patterns -->
+    <div class="hero-decorations">
+      <div style="position: absolute; top: 10%; left: 10%; width: 80px; height: 80px; border-radius: 50%; background: var(--secondary-color);"></div>
+      <div style="position: absolute; top: 30%; right: 20%; width: 60px; height: 60px; border-radius: 50%; background: white;"></div>
+      <div style="position: absolute; bottom: 20%; left: 30%; width: 50px; height: 50px; border-radius: 50%; background: var(--secondary-color);"></div>
+      <div style="position: absolute; bottom: 30%; right: 15%; width: 90px; height: 90px; border-radius: 50%; background: white;"></div>
+    </div>
     
-    @media (max-width: 480px) {
-      .vs-hero-wrapper {
-        min-height: 50vh !important;
-        padding: 30px 0 !important;
-      }
-      
-      .vs-hero-title {
-        font-size: 2rem !important;
-      }
-      
-      .vs-hero-text {
-        font-size: 1rem !important;
-      }
-      
-      .hero-badge {
-        font-size: 0.8rem !important;
-        padding: 6px 15px !important;
-      }
-      
-      .stat-number {
-        font-size: 1.8rem !important;
-      }
-    }
-  </style>
-    <div class="vs-hero-bg" data-bg-src="assets/img/tara-sur-la-lune-poster.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1;"></div>
-    <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(44, 62, 80, 0.8), rgba(52, 152, 219, 0.8)); z-index: 2;"></div>
-    <div class="container" style="position: relative; z-index: 3;">
-      <div class="row align-items-center justify-content-center text-center">
-        <div class="col-lg-10">
-          <div class="vs-hero-content text-white">
-            <div class="hero-badge" style="background: rgba(255,255,255,0.2); color: white; padding: 8px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px;">
-              <i class="fas fa-rocket"></i>
-              Spectacle Musical Bilingue
+    <div class="container hero-content py-5">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <div class="space-y-4">
+            <div>
+              <span class="spectacle-badge">Musical Bilingue</span>
             </div>
-            <h1 class="vs-hero-title" style="font-size: 4rem; font-weight: 700; margin-bottom: 25px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
-              <span style="color: #BDCF00;">تارا إلى القمر</span>
-            </h1>
-            <h2 style="font-size: 2rem; font-weight: 500; margin-bottom: 25px; color: #BDCF00;">Tara Sur La Lune</h2>
-            <p class="vs-hero-text" style="font-size: 1.3rem; margin-bottom: 35px; line-height: 1.6; opacity: 0.95; max-width: 600px; margin-left: auto; margin-right: auto; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
-              Une aventure spatiale musicale bilingue qui emmène les enfants dans un voyage extraordinaire à travers l'espace et l'imagination.
+            <h1 class="hero-title display-1 fw-bold mb-3" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Tara sur la Lune</h1>
+            <p class="hero-subtitle fs-4 mb-4" style="color: rgba(255,255,255,0.95);">Une aventure magique dans l'espace</p>
+            <p class="hero-description fs-5 mb-4" style="color: rgba(255,255,255,0.9); line-height: 1.6;">
+              Rejoignez Tara dans son voyage extraordinaire vers la lune, où l'imagination n'a pas de limites et où chaque étoile raconte une histoire.
             </p>
-            <div class="vs-hero-btns" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-              <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="vs-btn" style="background: white; color: #BDCF00; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-                <i class="fas fa-ticket-alt" style="margin-right: 8px;"></i>
-                Réserver des Billets
+            <div class="info-pills d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 mb-4">
+              <span class="info-pill px-3 py-2 rounded-pill" style="background: rgba(255,255,255,0.2); color: white; font-weight: 500;">
+                <i class="fas fa-clock me-2"></i>45 min
+              </span>
+              <span class="info-pill px-3 py-2 rounded-pill" style="background: rgba(255,255,255,0.2); color: white; font-weight: 500;">
+                <i class="fas fa-child me-2"></i>3-8 ans
+              </span>
+              <span class="info-pill px-3 py-2 rounded-pill" style="background: rgba(255,255,255,0.2); color: white; font-weight: 500;">
+                <i class="fas fa-users me-2"></i>Familial
+              </span>
+            </div>
+            <div class="hero-buttons d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+              <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="btn btn-light px-3 py-2 rounded-pill shadow-lg" style="font-weight: 600; transition: all 0.3s ease;">
+                <i class="fas fa-ticket-alt me-2"></i>
+                Réserver Maintenant
               </a>
-              <a href="#details" class="vs-btn style4" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white; padding: 15px 35px; border-radius: 30px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
-                <i class="fas fa-info-circle" style="margin-right: 8px;"></i>
-                En Savoir Plus
+              <button class="btn btn-outline-light px-3 py-2 rounded-pill" style="font-weight: 600; border: 2px solid white;">
+                <i class="fas fa-play me-2"></i>
+                Voir la Bande-annonce
+              </button>
+              <a href="assets/dossiers-pedagogiques/tara-sur-la-lune-dossier-pedagogique.pdf" 
+                 class="btn btn-success px-3 py-2 rounded-pill shadow-lg" 
+                 style="background: #BDCF00; border: none; font-weight: 600; transition: all 0.3s ease;" 
+                 download="Tara_sur_la_Lune_Dossier_Pedagogique.pdf">
+                <i class="fas fa-download me-2"></i>
+                Dossier Pédagogique
               </a>
             </div>
-            
-            <!-- Hero Stats -->
-            <div class="hero-stats" style="margin-top: 50px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
-              <div class="stat-item text-center">
-                <div class="stat-number" style="color: #BDCF00; font-size: 2.5rem; font-weight: 700; margin-bottom: 5px;">1h10</div>
-                <div class="stat-label" style="color: rgba(255,255,255,0.9); font-size: 1rem;">Durée</div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
+          <div class="hero-image text-center position-relative">
+            <div class="image-gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; max-width: 600px; margin: 0 auto;">
+              <!-- Tara Sur La Lune Images (3 best ones) -->
+              <div class="image-container" style="position: relative;">
+                <img src="assets/img/Tara_Sur_La_Lune_Web_041.jpg" alt="Tara sur la Lune - Aventure Spatiale" 
+                     class="img-fluid rounded-3 shadow" 
+                     style="width: 100%; height: 150px; object-fit: cover; border-radius: 0.75rem; transition: transform 0.3s ease;">
               </div>
-              <div class="stat-item text-center">
-                <div class="stat-number" style="color: #BDCF00; font-size: 2.5rem; font-weight: 700; margin-bottom: 5px;">5+</div>
-                <div class="stat-label" style="color: rgba(255,255,255,0.9); font-size: 1rem;">Âge minimum</div>
+              <div class="image-container" style="position: relative;">
+                <img src="assets/img/Tara_Sur_La_Lune_Web_044.jpg" alt="Tara sur la Lune - Personnages" 
+                     class="img-fluid rounded-3 shadow" 
+                     style="width: 100%; height: 150px; object-fit: cover; border-radius: 0.75rem; transition: transform 0.3s ease;">
               </div>
-              <div class="stat-item text-center">
-                <div class="stat-number" style="color: #BDCF00; font-size: 2.5rem; font-weight: 700; margin-bottom: 5px;">130DH</div>
-                <div class="stat-label" style="color: rgba(255,255,255,0.9); font-size: 1rem;">À partir de</div>
+              <div class="image-container" style="position: relative;">
+                <img src="assets/img/Tara_Sur_La_Lune_Web_025.jpg" alt="Tara sur la Lune - Scène Lunaire" 
+                     class="img-fluid rounded-3 shadow" 
+                     style="width: 100%; height: 150px; object-fit: cover; border-radius: 0.75rem; transition: transform 0.3s ease;">
+              </div>
+              <!-- Le Petit Prince Images (2 best ones) -->
+              <div class="image-container" style="position: relative;">
+                <img src="assets/img/Le_Petit_Prince_Web_050.jpg" alt="Le Petit Prince - Spectacle" 
+                     class="img-fluid rounded-3 shadow" 
+                     style="width: 100%; height: 150px; object-fit: cover; border-radius: 0.75rem; transition: transform 0.3s ease;">
+              </div>
+              <div class="image-container" style="position: relative;">
+                <img src="assets/img/Le_Petit_Prince_Web_066.jpg" alt="Le Petit Prince - Performance" 
+                     class="img-fluid rounded-3 shadow" 
+                     style="width: 100%; height: 150px; object-fit: cover; border-radius: 0.75rem; transition: transform 0.3s ease;">
+              </div>
+              <!-- Additional Specified Images -->
+              <div class="image-container" style="position: relative;">
+                <img src="assets/img/Les_Fourberies_De_Scapin_Web_005.jpg" alt="Les Fourberies De Scapin" 
+                     class="img-fluid rounded-3 shadow" 
+                     style="width: 100%; height: 150px; object-fit: cover; border-radius: 0.75rem; transition: transform 0.3s ease;">
+              </div>
+              <div class="image-container" style="position: relative;">
+                <img src="assets/img/Tara_Sur_La_Lune_Web_020.jpg" alt="Tara sur la Lune - Action" 
+                     class="img-fluid rounded-3 shadow" 
+                     style="width: 100%; height: 150px; object-fit: cover; border-radius: 0.75rem; transition: transform 0.3s ease;">
               </div>
             </div>
           </div>
@@ -288,134 +683,267 @@
     </div>
   </section>
 
-  <!-- Spectacle Details -->
-  <section class="space-top space-extra-bottom" id="details">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8">
-          <div class="vs-blog single-blog">
-            <div class="blog-img">
-              <img src="assets/img/tara-sur-la-lune-poster.jpg" alt="تارا إلى القمر" class="w-100">
+  <!-- Main Content -->
+  <div class="container py-5">
+    <div class="row g-4">
+      <!-- Main Content -->
+      <div class="col-lg-8">
+        <div class="space-y-4">
+          <!-- Synopsis -->
+          <div class="spectacle-card">
+            <div class="card-header-custom">
+              <h3 class="card-title-custom">
+                <i class="fas fa-music" style="color: var(--primary-color);"></i>
+                Histoire & Synopsis
+              </h3>
             </div>
-            <div class="blog-content">
-              <div class="blog-meta">
-                <a href="#"><i class="far fa-calendar"></i>Novembre - Décembre 2025</a>
-                <a href="#"><i class="far fa-user"></i>5 ans et plus</a>
-                <a href="#"><i class="far fa-clock"></i>1h10</a>
+            <div class="p-4">
+              <div class="space-y-4">
+                <p style="color: var(--text-light); line-height: 1.6; font-family: 'Raleway', sans-serif; font-size: 1.125rem;">
+                  Tara, une petite fille curieuse et rêveuse, se lance dans une mission extraordinaire : aller sur la lune ! Accompagnée de ses amis cosmiques, elle découvre les merveilles de l'espace tout en apprenant des valeurs importantes comme l'amitié, le courage et la persévérance. Ce spectacle bilingue permet aux enfants de découvrir l'aventure dans les deux langues, enrichissant leur expérience culturelle.
+                </p>
+                <div style="border-top: 1px solid #e9ecef; padding-top: 1rem;">
+                  <h4 style="font-family: 'Raleway', sans-serif; font-weight: 600; color: var(--text-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-info-circle" style="color: var(--primary-color);"></i>
+                    Détails du Spectacle
+                  </h4>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div style="background: rgba(189, 207, 0, 0.05); padding: 0.75rem; border-radius: 0.5rem;">
+                        <span style="color: var(--text-light); font-family: 'Raleway', sans-serif;">Genre:</span>
+                        <p style="font-weight: 600; color: var(--text-dark); font-family: 'Raleway', sans-serif; margin: 0;">Musical Bilingue</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div style="background: rgba(255, 107, 157, 0.05); padding: 0.75rem; border-radius: 0.5rem;">
+                        <span style="color: var(--text-light); font-family: 'Raleway', sans-serif;">Langues:</span>
+                        <p style="font-weight: 600; color: var(--text-dark); font-family: 'Raleway', sans-serif; margin: 0;">Français & Arabe</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h2 class="blog-title h1">تارا إلى القمر - Tara Sur La Lune</h2>
-              <p>Embarquez dans une aventure spatiale extraordinaire avec Tara ! Ce spectacle musical bilingue (français-arabe) transporte les jeunes spectateurs dans un voyage magique vers la lune, mêlant musique, chansons et effets visuels époustouflants.</p>
+            </div>
+          </div>
+
+          <!-- Features -->
+          <div class="spectacle-card">
+            <div class="card-header-custom">
+              <h3 class="card-title-custom">
+                <i class="fas fa-sparkles" style="color: var(--primary-color);"></i>
+                Caractéristiques Spéciales
+              </h3>
+            </div>
+            <div class="p-4">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="feature-item feature-primary">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--primary-color);"></div>
+                    <span style="font-family: 'Raleway', sans-serif; font-weight: 500; color: var(--text-light);">Aventure spatiale interactive</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="feature-item feature-secondary">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--secondary-color);"></div>
+                    <span style="font-family: 'Raleway', sans-serif; font-weight: 500; color: var(--text-light);">Musique live</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="feature-item feature-primary">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--primary-color);"></div>
+                    <span style="font-family: 'Raleway', sans-serif; font-weight: 500; color: var(--text-light);">Costumes spatiaux</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="feature-item feature-secondary">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--secondary-color);"></div>
+                    <span style="font-family: 'Raleway', sans-serif; font-weight: 500; color: var(--text-light);">Contenu éducatif</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Musical Numbers -->
+          <div class="spectacle-card">
+            <div class="card-header-custom" style="background: rgba(255, 107, 157, 0.05);">
+              <h3 class="card-title-custom">
+                <i class="fas fa-volume-up" style="color: var(--secondary-color);"></i>
+                Numéros Musicaux
+              </h3>
+            </div>
+            <div class="p-4">
+              <div class="row g-2">
+                <div class="col-md-6">
+                  <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; border-radius: 0.75rem; background: #f8f9fa;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--secondary-color); display: flex; align-items: center; justify-content: center;">
+                      <span style="color: white; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.875rem;">1</span>
+                    </div>
+                    <span style="font-family: 'Raleway', sans-serif; color: var(--text-light);">Voyage vers les Étoiles</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; border-radius: 0.75rem; background: #f8f9fa;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--secondary-color); display: flex; align-items: center; justify-content: center;">
+                      <span style="color: white; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.875rem;">2</span>
+                    </div>
+                    <span style="font-family: 'Raleway', sans-serif; color: var(--text-light);">Danse Lunaire</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; border-radius: 0.75rem; background: #f8f9fa;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--secondary-color); display: flex; align-items: center; justify-content: center;">
+                      <span style="color: white; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.875rem;">3</span>
+                    </div>
+                    <span style="font-family: 'Raleway', sans-serif; color: var(--text-light);">Amitié Cosmique</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; border-radius: 0.75rem; background: #f8f9fa;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--secondary-color); display: flex; align-items: center; justify-content: center;">
+                      <span style="color: white; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.875rem;">4</span>
+                    </div>
+                    <span style="font-family: 'Raleway', sans-serif; color: var(--text-light);">Retour sur Terre (Finale)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="col-lg-4">
+        <div class="space-y-4">
+          <!-- Show Information -->
+          <div class="spectacle-card sidebar-card">
+            <div class="p-4">
+              <h3 class="card-title-custom">
+                <i class="fas fa-calendar-alt" style="color: var(--primary-color);"></i>
+                Détails du Spectacle
+              </h3>
+              <div class="space-y-3 mt-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span style="color: var(--text-light); font-family: 'Raleway', sans-serif;">Durée:</span>
+                  <span style="font-weight: 600; color: var(--text-dark); font-family: 'Raleway', sans-serif;">1h10</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span style="color: var(--text-light); font-family: 'Raleway', sans-serif;">Âge:</span>
+                  <span style="font-weight: 600; color: var(--text-dark); font-family: 'Raleway', sans-serif;">5 ans et plus</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span style="color: var(--text-light); font-family: 'Raleway', sans-serif;">Langues:</span>
+                  <span style="font-weight: 600; color: var(--text-dark); font-family: 'Raleway', sans-serif;">FR & AR</span>
+                </div>
+              </div>
               
-              <blockquote>
-                <p>"Un spectacle qui fait rêver les enfants et leur donne envie d'explorer l'univers infini de leur imagination."</p>
-                <cite>- Équipe de Production EDJS</cite>
-              </blockquote>
+              <div style="padding-top: 1rem; border-top: 1px solid #e9ecef; margin-top: 1rem;">
+                <button class="reservation-btn w-100">
+                  <i class="fas fa-ticket-alt"></i>
+                  Réserver Maintenant
+                </button>
+              </div>
+            </div>
+          </div>
 
-              <h3>Synopsis</h3>
-              <p>Tara, une petite fille curieuse et rêveuse, se lance dans une mission extraordinaire : aller sur la lune ! Accompagnée de ses amis cosmiques, elle découvre les merveilles de l'espace tout en apprenant des valeurs importantes comme l'amitié, le courage et la persévérance. Ce spectacle bilingue permet aux enfants de découvrir l'aventure dans les deux langues, enrichissant leur expérience culturelle.</p>
-
-              <p>Avec des chansons entraînantes, des décors fantastiques et des effets spéciaux, "تارا إلى القمر" crée un univers immersif où science et imagination se rencontrent pour offrir un spectacle inoubliable.</p>
-
-              <h3>Caractéristiques du Spectacle</h3>
-              <ul class="vs-list list-unstyled">
-                <li><i class="far fa-check"></i>Spectacle musical bilingue (Français/Arabe)</li>
-                <li><i class="far fa-check"></i>Thème : Aventure spatiale et exploration</li>
-                <li><i class="far fa-check"></i>Décors et costumes spatiaux</li>
-                <li><i class="far fa-check"></i>Effets visuels et sonores immersifs</li>
-                <li><i class="far fa-check"></i>Chansons originales entraînantes</li>
-                <li><i class="far fa-check"></i>Message éducatif sur l'astronomie</li>
-              </ul>
-
-              <h3>Informations Pratiques</h3>
-              <div class="row">
-                <div class="col-md-6">
-                  <h4>Durée et Public</h4>
-                  <ul class="vs-list list-unstyled">
-                    <li><i class="far fa-clock"></i>Durée : 1h10</li>
-                    <li><i class="far fa-users"></i>Public : À partir de 5 ans</li>
-                    <li><i class="far fa-calendar"></i>Période : Novembre - Décembre 2025</li>
-                    <li><i class="far fa-globe"></i>Langues : Français et Arabe</li>
-                  </ul>
+          <!-- Venue Information -->
+          <div class="spectacle-card">
+            <div class="card-header-custom">
+              <h3 class="card-title-custom">
+                <i class="fas fa-map-marker-alt" style="color: var(--primary-color);"></i>
+                Informations Lieu
+              </h3>
+            </div>
+            <div class="p-4">
+              <div>
+                <h4 style="font-weight: 600; color: var(--text-dark); font-family: 'Raleway', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem;">Théâtre EDJS</h4>
+                <div class="space-y-3">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="fas fa-map-marker-alt" style="color: var(--primary-color); flex-shrink: 0;"></i>
+                    <div>
+                      <p style="color: var(--text-light); font-family: 'Raleway', sans-serif; margin: 0;">123 Avenue Mohammed V</p>
+                      <p style="color: var(--text-light); font-family: 'Raleway', sans-serif; margin: 0;">Casablanca, Maroc</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="fas fa-phone" style="color: var(--secondary-color); flex-shrink: 0;"></i>
+                    <span style="color: var(--text-light); font-family: 'Raleway', sans-serif;">+212 5 22 98 10 85</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="fas fa-envelope" style="color: var(--secondary-color); flex-shrink: 0;"></i>
+                    <span style="color: var(--text-light); font-family: 'Raleway', sans-serif;">info@edjs.ma</span>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <h4>Tarifs</h4>
-                  <ul class="vs-list list-unstyled">
-                    <li><i class="far fa-ticket-alt"></i>Enfant : 130 DH</li>
-                    <li><i class="far fa-ticket-alt"></i>Adulte : 150 DH</li>
-                    <li><i class="far fa-ticket-alt"></i>Groupe (10+) : -15%</li>
-                    <li><i class="far fa-star"></i>Famille (2A+2E) : 450 DH</li>
-                  </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Showtimes -->
+          <div class="spectacle-card">
+            <div class="card-header-custom" style="background: rgba(255, 107, 157, 0.05);">
+              <h3 class="card-title-custom">
+                <i class="fas fa-clock" style="color: var(--secondary-color);"></i>
+                Séances Disponibles
+              </h3>
+            </div>
+            <div class="p-4">
+              <div class="space-y-3">
+                <div style="padding: 1rem; border-radius: 1rem; border: 2px solid rgba(189, 207, 0, 0.3); background: white; transition: all 0.3s;">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="fas fa-calendar" style="color: var(--text-light); width: 16px; height: 16px;"></i>
+                    <span style="font-size: 0.875rem; color: var(--text-light); font-family: 'Raleway', sans-serif;">Samedi 15 Novembre 2025</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2 mb-3">
+                    <i class="fas fa-clock" style="color: var(--text-light); width: 16px; height: 16px;"></i>
+                    <span style="font-weight: 600; color: var(--text-dark); font-family: 'Raleway', sans-serif; font-size: 1.125rem;">14:30</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-family: 'Raleway', sans-serif; font-size: 0.875rem;">Disponible</span>
+                    <button class="reservation-btn" style="padding: 0.5rem 1rem; font-size: 0.875rem;">
+                      <i class="fas fa-ticket-alt"></i>
+                      Réserver
+                    </button>
+                  </div>
+                </div>
+                
+                <div style="padding: 1rem; border-radius: 1rem; border: 2px solid rgba(189, 207, 0, 0.3); background: white; transition: all 0.3s;">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="fas fa-calendar" style="color: var(--text-light); width: 16px; height: 16px;"></i>
+                    <span style="font-size: 0.875rem; color: var(--text-light); font-family: 'Raleway', sans-serif;">Dimanche 16 Novembre 2025</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2 mb-3">
+                    <i class="fas fa-clock" style="color: var(--text-light); width: 16px; height: 16px;"></i>
+                    <span style="font-weight: 600; color: var(--text-dark); font-family: 'Raleway', sans-serif; font-size: 1.125rem;">16:00</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span style="background: var(--secondary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-family: 'Raleway', sans-serif; font-size: 0.875rem;">Places limitées</span>
+                    <button class="reservation-btn" style="padding: 0.5rem 1rem; font-size: 0.875rem;">
+                      <i class="fas fa-ticket-alt"></i>
+                      Réserver
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-4">
-          <aside class="sidebar-area">
-            <div class="widget widget_booking">
-              <h3 class="widget_title">Réservation</h3>
-              <div class="booking-form-wrap">
-                <form action="contact.html" class="booking-form">
-                  <input type="hidden" name="spectacle" value="tara-lune">
-                  <div class="form-group">
-                    <label for="booking-date">Date souhaitée</label>
-                    <input type="date" id="booking-date" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label for="booking-time">Horaire</label>
-                    <select id="booking-time" class="form-control">
-                      <option>14h30 (Matinée)</option>
-                      <option>19h00 (Soirée)</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="booking-tickets">Nombre de billets</label>
-                    <input type="number" id="booking-tickets" class="form-control" min="1" value="2">
-                  </div>
-                  <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="vs-btn w-100">Réserver Maintenant</a>
-                </form>
-              </div>
-            </div>
-
-            <div class="widget widget_recent_spectacles">
-              <h3 class="widget_title">Autres Spectacles</h3>
-              <div class="recent-post-wrap">
-                <div class="recent-post">
-                  <div class="media-img">
-                    <a href="spectacle-charlotte.html"><img src="assets/img/charlotte-poster.jpg" alt="Charlotte"></a>
-                  </div>
-                  <div class="media-body">
-                    <h4 class="post-title"><a class="text-inherit" href="spectacle-charlotte.html">Charlotte</a></h4>
-                    <div class="recent-post-meta">
-                      <a href="#"><i class="fal fa-calendar-days"></i>Oct - Nov 2025</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="recent-post">
-                  <div class="media-img">
-                    <a href="spectacle-leau-la.html"><img src="assets/img/leau-la-poster.jpg" alt="L'Eau-Là"></a>
-                  </div>
-                  <div class="media-body">
-                    <h4 class="post-title"><a class="text-inherit" href="spectacle-leau-la.html">L'Eau-Là</a></h4>
-                    <div class="recent-post-meta">
-                      <a href="#"><i class="fal fa-calendar-days"></i>Jan - Fév 2026</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </aside>
-        </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!--==============================
-        Footer Area
-    ==============================-->
+  <!-- Sticky Reservation Button -->
+  <div id="stickyReservation" style="position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 50; opacity: 0; visibility: hidden; transition: all 0.3s ease;">
+    <div style="background: white; border-radius: 3rem; padding: 0.75rem; box-shadow: 0 20px 40px rgba(0,0,0,0.15); border: 4px solid var(--primary-color);">
+      <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="reservation-btn" style="animation: pulse 2s infinite; box-shadow: 0 4px 15px rgba(189, 207, 0, 0.4);">
+        <i class="fas fa-ticket-alt"></i>
+        Réserver Maintenant
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <div class="vs-footer bg-title">
     <div class="vs-footer__top z-index-common space-extra-top space-extra-bottom">
-      <img src="assets/img/icon edjs-22.png" alt="Footer Element" class="vs-footer__ele1 wow animate__fadeInLeft" data-wow-delay="0.25s" style="width: 120px; height: 120px;">
       <img src="assets/img/footer/footer-element-2.png" alt="Footer Element" class="vs-footer__ele2">
       <div class="vs-balls vs-balls--screen" data-balls-top="-6px" data-balls-color="#ffffff"></div>
       <div class="container">
@@ -423,8 +951,8 @@
           <div class="col-lg-4 col-md-6 wow animate__fadeInUp" data-wow-delay="0.25s">
             <div class="vs-footer__widget">
               <div class="vs-footer__logo text-center text-md-start mb-25">
-                <a href="index.html" class="vs-footer__logo-link">
-                  <img src="assets/img/edjs logo black@4x.png" alt="EDJS" style="height: 50px; width: auto; filter: brightness(0) invert(1);">
+                <a href="index.html" class="vs-logo">
+                  <img src="assets/img/Asset 2@4x.png" alt="EDJS" style="height: 120px; width: auto; max-width: none !important;">
                 </a>
               </div>
               <p class="vs-footer__desc text-center text-md-start" style="color: #999999;">
@@ -500,7 +1028,7 @@
         <div class="row gy-3 gx-5 align-items-center justify-content-center justify-content-lg-between flex-column-reverse flex-lg-row">
           <div class="col-md-auto">
             <p class="vs-footer__copyright mb-0" style="color: #999999;">
-              Copyright &copy; <span id="currentYear"></span>
+              Copyright © <span id="currentYear"></span>
               <a href="index.html">EDJS</a>. Tous droits réservés.
             </p>
           </div>
@@ -515,17 +1043,29 @@
     </div>
   </div>
 
-  <!-- JavaScript Files -->
-  <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+  <script>
+    // Show sticky reservation button after scrolling past hero section
+    window.addEventListener('scroll', function() {
+      const heroSection = document.querySelector('.spectacle-hero');
+      const stickyButton = document.getElementById('stickyReservation');
+      const heroHeight = heroSection.offsetHeight;
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > heroHeight * 0.8) {
+        stickyButton.style.opacity = '1';
+        stickyButton.style.visibility = 'visible';
+      } else {
+        stickyButton.style.opacity = '0';
+        stickyButton.style.visibility = 'hidden';
+      }
+    });
+  </script>
+
+  <!-- JS Files -->
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/wow.min.js"></script>
-  <script src="assets/js/jquery.magnific-popup.min.js"></script>
   <script src="assets/js/main.js"></script>
-
-  <script>
-    // Set current year in footer
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-  </script>
 
 </body>
 </html>

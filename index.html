@@ -25,7 +25,7 @@
 	============================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Kalam:wght@300;400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!--==============================
 	    All CSS File
 	============================== -->
@@ -43,6 +43,11 @@
   <!-- Theme Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
+    /* Header Menu Hover Color Fix */
+    .vs-header .main-menu ul li a svg path {
+      fill: #BDCF00 !important;
+    }
+    
     /* Ultra Modern Hero Slider Enhancements */
     .vs-hero {
       position: relative;
@@ -173,9 +178,11 @@
       font-size: 3.5rem;
       font-weight: 700;
       color: #2c3e50;
+      font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
       display: block;
       margin-bottom: 10px;
       text-shadow: none;
+      letter-spacing: -0.02em;
     }
 
     .achievement-label {
@@ -955,6 +962,11 @@
       transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
+    .hero-slide:first-child {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
     .hero-slide.active {
       opacity: 1;
       transform: scale(1);
@@ -1694,7 +1706,7 @@
           <div class="row justify-content-between align-items-center">
             <div class="col">
               <div class="vs-header__logo">
-                <a href="index.html"><img src="assets/img/edjs logo black@4x.png" alt="EDJS" class="logo" style="height: 350px; width: auto; max-width: none !important;"></a>
+                <a href="index.html"><img src="assets/img/edjs logo black@4x.png" alt="EDJS" class="logo" style="height: 100px !important; width: auto !important; max-width: none !important; min-height: 100px !important;"></a>
               </div>
             </div>
             <div class="col-auto">
@@ -1760,15 +1772,6 @@
                 <div class="d-none d-xxl-inline-flex">
                   <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="vs-btn"><span class="vs-btn__border"></span>Je m'inscris</a>
                 </div>
-                <div class="d-none d-lg-inline-flex align-items-center">
-                  <button class="sideMenuToggler">
-                    <svg width="31" height="23" viewBox="0 0 31 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M2.9165 4.5H28.4165C29.6594 4.5 30.6665 3.49292 30.6665 2.25C30.6665 1.00708 29.6594 0 28.4165 0H2.9165C1.67358 0 0.666504 1.00708 0.666504 2.25C0.666504 3.49292 1.67358 4.5 2.9165 4.5Z" fill="currentColor" />
-                      <path d="M28.4165 9H2.9165C1.67358 9 0.666504 10.0071 0.666504 11.25C0.666504 12.4929 1.67358 13.5 2.9165 13.5H28.4165C29.6594 13.5 30.6665 12.4929 30.6665 11.25C30.6665 10.0071 29.6594 9 28.4165 9Z" fill="currentColor" />
-                      <path d="M28.4165 18H2.9165C1.67358 18 0.666504 19.0071 0.666504 20.25C0.666504 21.4929 1.67358 22.5 2.9165 22.5H28.4165C29.6594 22.5 30.6665 21.4929 30.6665 20.25C30.6665 19.0071 29.6594 18 28.4165 18Z" fill="currentColor" />
-                    </svg>
-                  </button>
-                </div>
                 <button class="vs-menu-toggle style2 d-inline-block d-lg-none">
                   <i class="fal fa-bars"></i>
                 </button>
@@ -1795,12 +1798,16 @@
     <section class="vs-hero overflow-hidden z-index-common parallax-wrap">
       <!-- Advanced Hero Background Slider -->
       <div class="hero-background-slider">
-        <div class="hero-slide active" style="background-image: url('assets/img/Les_Trois_Brigands_Web_061.jpg');"></div>
-        <div class="hero-slide" style="background-image: url('assets/img/Casse-Noisette_Web_007.jpg');"></div>
-        <div class="hero-slide" style="background-image: url('assets/img/Le_Petit_Prince_Web_032.jpg');"></div>
+        <!-- 2 Le Petit Prince Images (moved to start) -->
+        <div class="hero-slide" style="background-image: url('assets/img/Le_Petit_Prince_Web_050.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('assets/img/Le_Petit_Prince_Web_066.jpg');"></div>
+        <!-- 3 Tara Sur La Lune Images -->
+        <div class="hero-slide" style="background-image: url('assets/img/Tara_Sur_La_Lune_Web_041.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('assets/img/Tara_Sur_La_Lune_Web_044.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('assets/img/Tara_Sur_La_Lune_Web_025.jpg');"></div>
+        <!-- 2 Additional Specified Images -->
+        <div class="hero-slide" style="background-image: url('assets/img/Les_Fourberies_De_Scapin_Web_005.jpg');"></div>
         <div class="hero-slide" style="background-image: url('assets/img/Tara_Sur_La_Lune_Web_020.jpg');"></div>
-        <div class="hero-slide" style="background-image: url('assets/img/Les_Fourberies_De_Scapin_Web_021.jpg');"></div>
-        <div class="hero-slide" style="background-image: url('assets/img/Dans_la_peau_de_Cyrano_Web_027.jpg');"></div>
       </div>
       <!-- Enhanced Overlay with Gradient -->
       <div class="hero-overlay"></div>
@@ -1821,13 +1828,13 @@
                   text-align: center;
                   padding: 80px 40px;
                 ">
-                  <span class="vs-hero__title--sub" style="color: white; font-size: 20px; margin-bottom: 20px; font-weight: 500;">
+                  <span class="vs-hero__title--sub" style="color: white; font-size: 24px; margin-bottom: 20px; font-weight: 500;">
                     L'École du Jeune Spectateur
                   </span>
-                  <h1 class="vs-hero__title--main" style="color: white; font-size: 64px; font-weight: bold; margin: 0; padding: 0; line-height: 0.8; display: block;">
+                  <h1 class="vs-hero__title--main" style="color: white; font-size: 72px; font-weight: bold; margin: 0; padding: 0; line-height: 0.8; display: block;">
                     Le théâtre pour tous !
                   </h1>
-                  <p class="vs-hero__desc" style="color: white; font-size: 18px; margin: 0; padding: 0; line-height: 1.6; opacity: 0.9; transform: translateY(-30px); display: block;" data-aos="fade-up" data-aos-delay="600">
+                  <p class="vs-hero__desc" style="color: white; font-size: 20px; margin: 0; margin-top: 35px; padding: 0; line-height: 1.6; opacity: 0.9; transform: translateY(-30px); display: block;" data-aos="fade-up" data-aos-delay="600">
                     Depuis 2013, nous initions des milliers d'enfants au théâtre et aux arts vivants à travers un parcours ludique, éducatif et culturel unique au Maroc.
                   </p>
                   <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
@@ -1912,30 +1919,28 @@
             </div>
           </div>
         </div>
-        <div class="z-index-common">
+        <div class="z-index-common" style="padding-bottom: 60px;">
           <div class="row justify-content-center swiper vs-carousel vs-carousel--service z-index-common pl-0" data-xl="3" data-loop="true" data-autoplay-delay="6000" data-nav-next=".nav-next-2" data-nav-prev=".nav-prev-1">
             <div class="swiper-wrapper">
               <div class="col-lg-4 col-md-6 swiper-slide">
-                <div class="vs-service wow animate__fadeInUp" data-wow-delay="0.25s">
-                  <div class="vs-service__figure">
-                    <a href="service-details.html" class="vs-service__image--link">
-                      <img class="vs-service__image" src="assets/edjs img/Casse-Noisette_Web_039-1024x683.webp" alt="Spectacle pour écoles publiques">
+                <div class="vs-service wow animate__fadeInUp" data-wow-delay="0.25s" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 20px 40px rgba(0,0,0,0.05); transition: all 0.3s ease; overflow: hidden; background: white;">
+                  <div class="vs-service__figure" style="position: relative; overflow: hidden; border-radius: 20px 20px 0 0;">
+                    <a href="service-details.html" class="vs-service__image--link" style="display: block; position: relative; overflow: hidden;">
+                      <img class="vs-service__image" src="assets/edjs img/Casse-Noisette_Web_039-1024x683.webp" alt="Spectacle pour écoles publiques" style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s ease;">
                     </a>
                   </div>
-                  <div class="vs-service__content">
-                    <div class="vs-service__header">
-                      <span class="vs-service__icon">
-                      <img src="assets/img/icon edjs-07.png" alt="service icon" style="width: 50px; height: 50px;">
+                  <div class="vs-service__content" style="padding: 30px 25px;">
+                    <div class="vs-service__header" style="margin-bottom: 20px;">
+                      <span class="vs-service__icon" style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 70px; background: linear-gradient(135deg, #BDCF00, #9BB800); border-radius: 50%; margin-bottom: 15px;">
+                      <img src="assets/img/icon edjs-07.png" alt="service icon" style="width: 35px; height: 35px; filter: brightness(0) invert(1);">
                     </span>
                     </div>
-                    <a class="vs-service__heading--link" href="service-details.html">
-                      <h3 class="vs-service__heading">Écoles Publiques</h3>
+                    <a class="vs-service__heading--link" href="service-details.html" style="text-decoration: none; color: inherit;">
+                      <h3 class="vs-service__heading" style="margin-bottom: 15px; font-size: 24px; font-weight: 700; color: #333;">Écoles Publiques</h3>
                     </a>
-                    <p class="vs-service__text">Accès gratuit aux spectacles pour les écoles publiques. Des représentations adaptées aux programmes scolaires avec un accompagnement pédagogique complet.</p>
-                    <a href="service-details.html" class="vs-service__link">
-                    </a>
-                    <a href="service-details.html" class="vs-service__link">
-                      <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <p class="vs-service__text" style="color: #666; line-height: 1.6; margin-bottom: 25px; font-size: 16px;">Accès gratuit aux spectacles pour les écoles publiques. Des représentations adaptées aux programmes scolaires avec un accompagnement pédagogique complet.</p>
+                    <a href="service-details.html" class="vs-service__link" style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #BDCF00, #9BB800); color: white; text-decoration: none; border-radius: 50%; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(189, 207, 0, 0.3); position: absolute; bottom: 20px; right: 20px;">
+                      <svg width="20" height="20" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.39045 17.9495L17.6245 3.81022L11.9467 3.41092C11.6162 3.39253 11.307 3.24133 11.0897 2.99157C10.3795 2.16137 11.0268 0.887081 12.116 0.97149L20.7679 1.567C21.4447 1.61318 21.9555 2.20013 21.9077 2.87686L21.3019 11.5281C21.2154 13.1944 18.7024 13.0128 18.8562 11.3514L19.2524 5.64459L3.0003 19.7995C2.48691 20.2625 1.69228 20.2096 1.24372 19.6835C0.800172 19.1667 0.86807 18.3864 1.39045 17.9495Z" fill="currentColor" />
                       </svg>
                     </a>
@@ -1943,26 +1948,24 @@
                 </div>
               </div>
               <div class="col-lg-4 col-md-6 swiper-slide">
-                <div class="vs-service wow animate__fadeInUp" data-wow-delay="0.35s">
-                  <div class="vs-service__figure">
-                    <a href="service-details.html" class="vs-service__image--link">
-                      <img class="vs-service__image" src="assets/edjs img/Casse-Noisette_Web_048-1024x683.webp" alt="Spectacle pour écoles privées">
+                <div class="vs-service wow animate__fadeInUp" data-wow-delay="0.35s" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 20px 40px rgba(0,0,0,0.05); transition: all 0.3s ease; overflow: hidden; background: white; position: relative;">
+                  <div class="vs-service__figure" style="position: relative; overflow: hidden; border-radius: 20px 20px 0 0;">
+                    <a href="service-details.html" class="vs-service__image--link" style="display: block; position: relative; overflow: hidden;">
+                      <img class="vs-service__image" src="assets/edjs img/Casse-Noisette_Web_048-1024x683.webp" alt="Spectacle pour écoles privées" style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s ease;">
                     </a>
                   </div>
-                  <div class="vs-service__content">
-                    <div class="vs-service__header">
-                      <span class="vs-service__icon">
-                      <img src="assets/img/icon edjs-04.png" alt="service icon" style="width: 50px; height: 50px;">
+                  <div class="vs-service__content" style="padding: 30px 25px;">
+                    <div class="vs-service__header" style="margin-bottom: 20px;">
+                      <span class="vs-service__icon" style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 70px; background: linear-gradient(135deg, #BDCF00, #9BB800); border-radius: 50%; margin-bottom: 15px;">
+                      <img src="assets/img/icon edjs-04.png" alt="service icon" style="width: 35px; height: 35px; filter: brightness(0) invert(1);">
                     </span>
                     </div>
-                    <a class="vs-service__heading--link" href="service-details.html">
-                      <h3 class="vs-service__heading">Écoles Privées</h3>
+                    <a class="vs-service__heading--link" href="service-details.html" style="text-decoration: none; color: inherit;">
+                      <h3 class="vs-service__heading" style="margin-bottom: 15px; font-size: 24px; font-weight: 700; color: #333;">Écoles Privées</h3>
                     </a>
-                    <p class="vs-service__text">Tarifs préférentiels et programmes culturels sur mesure. Un accompagnement pédagogique personnalisé pour enrichir l'expérience éducative.</p>
-                    <a href="service-details.html" class="vs-service__link">
-                    </a>
-                    <a href="service-details.html" class="vs-service__link">
-                      <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <p class="vs-service__text" style="color: #666; line-height: 1.6; margin-bottom: 25px; font-size: 16px;">Tarifs préférentiels et programmes culturels sur mesure. Un accompagnement pédagogique personnalisé pour enrichir l'expérience éducative.</p>
+                    <a href="service-details.html" class="vs-service__link" style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #BDCF00, #9BB800); color: white; text-decoration: none; border-radius: 50%; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(189, 207, 0, 0.3); position: absolute; bottom: 20px; right: 20px;">
+                      <svg width="20" height="20" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.39045 17.9495L17.6245 3.81022L11.9467 3.41092C11.6162 3.39253 11.307 3.24133 11.0897 2.99157C10.3795 2.16137 11.0268 0.887081 12.116 0.97149L20.7679 1.567C21.4447 1.61318 21.9555 2.20013 21.9077 2.87686L21.3019 11.5281C21.2154 13.1944 18.7024 13.0128 18.8562 11.3514L19.2524 5.64459L3.0003 19.7995C2.48691 20.2625 1.69228 20.2096 1.24372 19.6835C0.800172 19.1667 0.86807 18.3864 1.39045 17.9495Z" fill="currentColor" />
                       </svg>
                     </a>
@@ -1970,24 +1973,24 @@
                 </div>
               </div>
               <div class="col-lg-4 col-md-6 swiper-slide">
-                <div class="vs-service wow animate__fadeInUp" data-wow-delay="0.45s">
-                  <div class="vs-service__figure">
-                    <a href="service-details.html" class="vs-service__image--link">
-                      <img class="vs-service__image" src="assets/edjs img/Casse-Noisette_Web_013-1024x683.webp" alt="Spectacle pour associations">
+                <div class="vs-service wow animate__fadeInUp" data-wow-delay="0.45s" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 20px 40px rgba(0,0,0,0.05); transition: all 0.3s ease; overflow: hidden; background: white; position: relative;">
+                  <div class="vs-service__figure" style="position: relative; overflow: hidden; border-radius: 20px 20px 0 0;">
+                    <a href="service-details.html" class="vs-service__image--link" style="display: block; position: relative; overflow: hidden;">
+                      <img class="vs-service__image" src="assets/edjs img/Casse-Noisette_Web_013-1024x683.webp" alt="Spectacle pour associations" style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s ease;">
                     </a>
                   </div>
-                  <div class="vs-service__content">
-                    <div class="vs-service__header">
-                      <span class="vs-service__icon">
-                      <img src="assets/img/icon edjs-05.png" alt="service icon" style="width: 50px; height: 50px;">
+                  <div class="vs-service__content" style="padding: 30px 25px;">
+                    <div class="vs-service__header" style="margin-bottom: 20px;">
+                      <span class="vs-service__icon" style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 70px; background: linear-gradient(135deg, #BDCF00, #9BB800); border-radius: 50%; margin-bottom: 15px;">
+                      <img src="assets/img/icon edjs-05.png" alt="service icon" style="width: 35px; height: 35px; filter: brightness(0) invert(1);">
                     </span>
                     </div>
-                    <a class="vs-service__heading--link" href="associations.html">
-                      <h3 class="vs-service__heading">Associations</h3>
+                    <a class="vs-service__heading--link" href="associations.html" style="text-decoration: none; color: inherit;">
+                      <h3 class="vs-service__heading" style="margin-bottom: 15px; font-size: 24px; font-weight: 700; color: #333;">Associations</h3>
                     </a>
-                    <p class="vs-service__text">Programmes spéciaux pour les associations et centres communautaires. Tarifs adaptés pour rendre la culture accessible à tous les publics.</p>
-                    <a href="associations.html" class="vs-service__link">
-                      <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <p class="vs-service__text" style="color: #666; line-height: 1.6; margin-bottom: 25px; font-size: 16px;">Programmes spéciaux pour les associations et centres communautaires. Tarifs adaptés pour rendre la culture accessible à tous les publics.</p>
+                    <a href="associations.html" class="vs-service__link" style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #BDCF00, #9BB800); color: white; text-decoration: none; border-radius: 50%; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(189, 207, 0, 0.3); position: absolute; bottom: 20px; right: 20px;">
+                      <svg width="20" height="20" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.39045 17.9495L17.6245 3.81022L11.9467 3.41092C11.6162 3.39253 11.307 3.24133 11.0897 2.99157C10.3795 2.16137 11.0268 0.887081 12.116 0.97149L20.7679 1.567C21.4447 1.61318 21.9555 2.20013 21.9077 2.87686L21.3019 11.5281C21.2154 13.1944 18.7024 13.0128 18.8562 11.3514L19.2524 5.64459L3.0003 19.7995C2.48691 20.2625 1.69228 20.2096 1.24372 19.6835C0.800172 19.1667 0.86807 18.3864 1.39045 17.9495Z" fill="currentColor" />
                       </svg>
                     </a>
@@ -1995,26 +1998,24 @@
                 </div>
               </div>
               <div class="col-lg-4 col-md-6 swiper-slide">
-                <div class="vs-service wow animate__fadeInUp" data-wow-delay="0.55s">
-                  <div class="vs-service__figure">
-                    <a href="families.html" class="vs-service__image--link">
-                      <img class="vs-service__image" src="assets/edjs img/Casse-Noisette_Web_048-1024x683.webp" alt="Spectacle pour familles">
+                <div class="vs-service wow animate__fadeInUp" data-wow-delay="0.55s" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 20px 40px rgba(0,0,0,0.05); transition: all 0.3s ease; overflow: hidden; background: white; position: relative;">
+                  <div class="vs-service__figure" style="position: relative; overflow: hidden; border-radius: 20px 20px 0 0;">
+                    <a href="families.html" class="vs-service__image--link" style="display: block; position: relative; overflow: hidden;">
+                      <img class="vs-service__image" src="assets/edjs img/Casse-Noisette_Web_048-1024x683.webp" alt="Spectacle pour familles" style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s ease;">
                     </a>
                   </div>
-                  <div class="vs-service__content">
-                    <div class="vs-service__header">
-                      <span class="vs-service__icon">
-                      <img src="assets/img/icon edjs-06.png" alt="service icon" style="width: 50px; height: 50px;">
+                  <div class="vs-service__content" style="padding: 30px 25px;">
+                    <div class="vs-service__header" style="margin-bottom: 20px;">
+                      <span class="vs-service__icon" style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 70px; background: linear-gradient(135deg, #BDCF00, #9BB800); border-radius: 50%; margin-bottom: 15px;">
+                      <img src="assets/img/icon edjs-06.png" alt="service icon" style="width: 35px; height: 35px; filter: brightness(0) invert(1);">
                     </span>
                     </div>
-                    <a class="vs-service__heading--link" href="families.html">
-                      <h3 class="vs-service__heading">Familles</h3>
+                    <a class="vs-service__heading--link" href="families.html" style="text-decoration: none; color: inherit;">
+                      <h3 class="vs-service__heading" style="margin-bottom: 15px; font-size: 24px; font-weight: 700; color: #333;">Familles</h3>
                     </a>
-                    <p class="vs-service__text">Réservation en ligne simple avec billets QR instantanés. Paiement sécurisé par carte CMI et possibilité de modification jusqu'à 27h avant le spectacle.</p>
-                    <a href="families.html" class="vs-service__link">
-                    </a>
-                    <a href="families.html" class="vs-service__link">
-                      <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <p class="vs-service__text" style="color: #666; line-height: 1.6; margin-bottom: 25px; font-size: 16px;">Réservation en ligne simple avec billets QR instantanés. Paiement sécurisé par carte CMI et possibilité de modification jusqu'à 27h avant le spectacle.</p>
+                    <a href="families.html" class="vs-service__link" style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #BDCF00, #9BB800); color: white; text-decoration: none; border-radius: 50%; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(189, 207, 0, 0.3); position: absolute; bottom: 20px; right: 20px;">
+                      <svg width="20" height="20" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.39045 17.9495L17.6245 3.81022L11.9467 3.41092C11.6162 3.39253 11.307 3.24133 11.0897 2.99157C10.3795 2.16137 11.0268 0.887081 12.116 0.97149L20.7679 1.567C21.4447 1.61318 21.9555 2.20013 21.9077 2.87686L21.3019 11.5281C21.2154 13.1944 18.7024 13.0128 18.8562 11.3514L19.2524 5.64459L3.0003 19.7995C2.48691 20.2625 1.69228 20.2096 1.24372 19.6835C0.800172 19.1667 0.86807 18.3864 1.39045 17.9495Z" fill="currentColor" />
                       </svg>
                     </a>
@@ -2022,26 +2023,24 @@
                 </div>
               </div>
               <div class="col-lg-4 col-md-6 swiper-slide">
-                <div class="vs-service wow animate__fadeInUp" data-wow-delay="0.65s">
-                  <div class="vs-service__figure">
-                    <a href="partners.html" class="vs-service__image--link">
-                      <img class="vs-service__image" src="assets/edjs img/Casse-Noisette_Web_035.webp" alt="Partenaires EDJS">
+                <div class="vs-service wow animate__fadeInUp" data-wow-delay="0.65s" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; overflow: hidden; background: white; position: relative;">
+                  <div class="vs-service__figure" style="position: relative; overflow: hidden; border-radius: 20px 20px 0 0;">
+                    <a href="partners.html" class="vs-service__image--link" style="display: block; position: relative; overflow: hidden;">
+                      <img class="vs-service__image" src="assets/edjs img/Casse-Noisette_Web_035.webp" alt="Partenaires EDJS" style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s ease;">
                     </a>
                   </div>
-                  <div class="vs-service__content">
-                    <div class="vs-service__header">
-                      <span class="vs-service__icon">
-                      <img src="assets/img/icon edjs-08.png" alt="service icon" style="width: 50px; height: 50px;">
+                  <div class="vs-service__content" style="padding: 30px 25px;">
+                    <div class="vs-service__header" style="margin-bottom: 20px;">
+                      <span class="vs-service__icon" style="display: inline-flex; align-items: center; justify-content: center; width: 70px; height: 70px; background: linear-gradient(135deg, #BDCF00, #9BB800); border-radius: 50%; margin-bottom: 15px;">
+                      <img src="assets/img/icon edjs-08.png" alt="service icon" style="width: 35px; height: 35px; filter: brightness(0) invert(1);">
                     </span>
                     </div>
-                    <a class="vs-service__heading--link" href="partners.html">
-                      <h3 class="vs-service__heading">Partenaires</h3>
+                    <a class="vs-service__heading--link" href="partners.html" style="text-decoration: none; color: inherit;">
+                      <h3 class="vs-service__heading" style="margin-bottom: 15px; font-size: 24px; font-weight: 700; color: #333;">Partenaires</h3>
                     </a>
-                    <p class="vs-service__text">Collaboration avec les institutions culturelles et éducatives pour promouvoir l'accès à la culture.</p>
-                    <a href="partners.html" class="vs-service__link">
-                    </a>
-                    <a href="partners.html" class="vs-service__link">
-                      <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <p class="vs-service__text" style="color: #666; line-height: 1.6; margin-bottom: 25px; font-size: 16px;">Collaboration avec les institutions culturelles et éducatives pour promouvoir l'accès à la culture.</p>
+                    <a href="partners.html" class="vs-service__link" style="display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #BDCF00, #9BB800); color: white; text-decoration: none; border-radius: 50%; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(189, 207, 0, 0.3); position: absolute; bottom: 20px; right: 20px;">
+                      <svg width="20" height="20" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.39045 17.9495L17.6245 3.81022L11.9467 3.41092C11.6162 3.39253 11.307 3.24133 11.0897 2.99157C10.3795 2.16137 11.0268 0.887081 12.116 0.97149L20.7679 1.567C21.4447 1.61318 21.9555 2.20013 21.9077 2.87686L21.3019 11.5281C21.2154 13.1944 18.7024 13.0128 18.8562 11.3514L19.2524 5.64459L3.0003 19.7995C2.48691 20.2625 1.69228 20.2096 1.24372 19.6835C0.800172 19.1667 0.86807 18.3864 1.39045 17.9495Z" fill="currentColor" />
                       </svg>
                     </a>
@@ -2098,7 +2097,7 @@
             </div>
           </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" style="gap: 40px;">
           <div class="col-lg-2 col-md-4 col-6 mb-4 d-flex justify-content-center">
             <div class="achievement-item wow animate__fadeInUp text-center" data-wow-delay="0.1s" style="min-width: 180px;">
               <span class="achievement-number" data-count="10">10</span>
@@ -2107,7 +2106,7 @@
           </div>
           <div class="col-lg-2 col-md-4 col-6 mb-4 d-flex justify-content-center">
             <div class="achievement-item wow animate__fadeInUp text-center" data-wow-delay="0.2s" style="min-width: 180px;">
-              <span class="achievement-number" data-count="10000">+10000</span>
+              <span class="achievement-number" data-count="10000">+10K</span>
               <span class="achievement-label">enfants bénéficiaires par an</span>
             </div>
           </div>
@@ -2405,7 +2404,12 @@
     </section>
     <!-- Vs Gallery Area End -->
     <!-- VS Grade Programs -->
-    <section class="vs-pro--area position-relative" style="background: white url('assets/img/bg/test 1111@4x.png') no-repeat center center; background-size: cover;">
+    <section class="vs-pro--area position-relative" style="background: url('assets/img/bg/test 1111@4x.png') no-repeat center center; background-size: cover; z-index: 100; margin-bottom: -50px;">
+      <style>
+        .vs-pro--area::before {
+          display: none !important;
+        }
+      </style>
       <div class="vs-pro--ele2"></div>
       <div class="vs-pro--ele3"></div>
       <div class="container">
@@ -2419,7 +2423,7 @@
               <p class="text-white fw-bold text-capitalize font-title vs-text-bolder mb-0">Découvrez nos productions culturelles
               </p>
               <div class="text-center mt-4">
-                <a href="spectacles.html" class="vs-btn style2"><span class="vs-btn__border"></span>Voir Plus</a>
+                <a href="spectacles.html" class="vs-btn style2" style="background: white !important; color: #BDCF00 !important;"><span class="vs-btn__border"></span>Voir Plus</a>
               </div>
             </div>
             <div class="vs-pro--slider__direction justify-content-center mb-md-4">
@@ -2482,7 +2486,7 @@
     </section>
     <!-- VS Grade Programs End -->
     <!-- Class -->
-    <section class="vs-class--area space-extra-top space-extra-bottom z-index-common overflow-hidden" style="background-image: url('assets/img/Asset 9@4x.png') !important; background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important; background-color: #f8f9fa !important; position: relative;">
+    <section class="vs-class--area space-extra-top space-extra-bottom z-index-common overflow-hidden" style="background-image: url('assets/img/Asset 9@4x.png') !important; background-size: cover !important; background-position: center center !important; background-repeat: no-repeat !important; background-color: #f8f9fa !important; position: relative; padding: 160px; margin-top: -80px; z-index: 1; width: 100vw !important; height: auto !important; background-attachment: scroll !important;">
       
       <div class="container" style="position: relative; z-index: 2;">
         <div class="row">
@@ -2667,7 +2671,7 @@
                       <img class="vs-class__figure--img" src="assets/img/4x/Asset 7@4x.png" alt="Dans la Peau de Cyrano" style="object-fit: contain !important; padding: 10px; background: white; border-radius: 15px;">
                       <div class="vs-class__icon--wrap">
                         <span class="vs-class__icon vs-class__icon--color2">
-                        <img src="assets/img/icon edjs-22.png" alt="Spectacle Icon" style="width: 35px; height: 35px;">
+                        <img src="assets/img/Asset 2@4x.png" alt="Spectacle Icon" style="width: 35px; height: 35px;">
                       </span>
                       </div>
                     </a>
@@ -3139,7 +3143,6 @@
   
   <div class="vs-footer bg-title">
     <div class="vs-footer__top z-index-common space-extra-top space-extra-bottom">
-      <img src="assets/img/icon edjs-22.png" alt="Footer Element" class="vs-footer__ele1 wow animate__fadeInLeft" data-wow-delay="0.25s" style="width: 120px; height: 120px;">
       <img src="assets/img/footer/footer-element-2.png" alt="Footer Element" class="vs-footer__ele2">
       <div class="vs-balls vs-balls--screen" data-balls-top="-6px" data-balls-color="#ffffff"></div>
       <div class="container">
@@ -3148,7 +3151,7 @@
             <div class="vs-footer__widget">
               <div class="vs-footer__logo text-center text-md-start mb-25">
                 <a href="index.html" class="vs-logo">
-                  <img src="assets/img/edjs logo black@4x.png" alt="EDJS" style="height: 120px; width: auto; max-width: none !important;">
+                  <img src="assets/img/Asset 2@4x.png" alt="EDJS" style="height: 120px; width: auto; max-width: none !important;">
                 </a>
               </div>
               <p class="vs-footer__desc text-center text-md-start" style="color: #999999;">
@@ -3275,117 +3278,6 @@
   <!-- Main Js File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/hero-slider.js"></script>
-        duration: 1000,
-        once: true,
-        offset: 100
-      });
-
-      // Counter animation for stats
-      function animateCounters() {
-        const counters = document.querySelectorAll('.stat-number');
-        counters.forEach(counter => {
-          const target = parseInt(counter.getAttribute('data-count') || counter.textContent);
-          const duration = 2000;
-          const increment = target / (duration / 16);
-          let current = 0;
-          
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              counter.textContent = target + (counter.textContent.includes('+') ? '+' : '');
-              clearInterval(timer);
-            } else {
-              counter.textContent = Math.floor(current) + (counter.textContent.includes('+') ? '+' : '');
-            }
-          }, 16);
-        });
-      }
-
-      // Trigger counter animation when hero section is visible
-      const heroSection = document.querySelector('.vs-hero');
-      if (heroSection) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              animateCounters();
-              observer.unobserve(entry.target);
-            }
-          });
-        });
-        observer.observe(heroSection);
-      }
-
-      // Newsletter form functionality
-      const newsletterForm = document.getElementById('newsletterForm');
-      if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          const email = document.getElementById('newsletterEmail').value;
-          const button = this.querySelector('.newsletter-btn');
-          const originalText = button.textContent;
-          
-          // Simple email validation
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(email)) {
-            alert('Veuillez entrer une adresse email valide.');
-            return;
-          }
-          
-          // Show loading state
-          button.textContent = 'Inscription...';
-          button.disabled = true;
-          
-          // Simulate API call (replace with actual newsletter service)
-          setTimeout(() => {
-            button.textContent = 'Inscrit ✓';
-            button.style.background = '#4CAF50';
-            document.getElementById('newsletterEmail').value = '';
-            
-            // Reset button after 3 seconds
-            setTimeout(() => {
-              button.textContent = originalText;
-              button.style.background = '';
-              button.disabled = false;
-            }, 3000);
-          }, 1000);
-        });
-      }
-
-      // Smooth scroll for scroll indicator
-      const scrollIndicator = document.querySelector('.scroll-indicator');
-      if (scrollIndicator) {
-        scrollIndicator.addEventListener('click', function() {
-          const nextSection = document.querySelector('.vs-hero').nextElementSibling;
-          if (nextSection) {
-            nextSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        });
-      }
-
-      // Parallax effect for floating shapes
-      window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const shapes = document.querySelectorAll('.shape');
-        shapes.forEach((shape, index) => {
-          const speed = 0.5 + (index * 0.1);
-          shape.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
-        });
-      });
-
-      // Enhanced hover effects for hero buttons
-      const heroButtons = document.querySelectorAll('.hero-buttons .vs-btn');
-      heroButtons.forEach(button => {
-        button.addEventListener('mouseenter', function() {
-          this.style.transform = 'translateY(-2px)';
-          this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.2)';
-        });
-        button.addEventListener('mouseleave', function() {
-          this.style.transform = 'translateY(0)';
-          this.style.boxShadow = 'none';
-        });
-      });
-    });
-  </script>
 </body>
 
 </html>

@@ -12,6 +12,9 @@ class HeroSlider {
     init() {
         if (this.slides.length === 0) return;
         
+        // Set first slide as active immediately
+        this.slides[0].classList.add('active');
+        
         // Start the slider
         this.startSlider();
         
@@ -108,12 +111,13 @@ document.addEventListener('DOMContentLoaded', function() {
 // Preload images for smooth transitions
 function preloadHeroImages() {
     const imageUrls = [
-        'assets/img/Les_Trois_Brigands_Web_061.jpg',
-        'assets/img/Casse-Noisette_Web_007.jpg',
-        'assets/img/Le_Petit_Prince_Web_032.jpg',
-        'assets/img/Tara_Sur_La_Lune_Web_020.jpg',
-        'assets/img/Les_Fourberies_De_Scapin_Web_021.jpg',
-        'assets/img/Dans_la_peau_de_Cyrano_Web_027.jpg'
+        'assets/img/Tara_Sur_La_Lune_Web_041.jpg',
+        'assets/img/Tara_Sur_La_Lune_Web_044.jpg',
+        'assets/img/Tara_Sur_La_Lune_Web_025.jpg',
+        'assets/img/Le_Petit_Prince_Web_050.jpg',
+        'assets/img/Le_Petit_Prince_Web_066.jpg',
+        'assets/img/Les_Fourberies_De_Scapin_Web_005.jpg',
+        'assets/img/Tara_Sur_La_Lune_Web_020.jpg'
     ];
     
     imageUrls.forEach(url => {

@@ -5,10 +5,10 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Charlotte - École du Jeune Spectateur</title>
+  <title>Le Petit Prince - École du Jeune Spectateur</title>
   <meta name="author" content="EDJS">
-  <meta name="description" content="Une histoire touchante avec Juliere Gillis et Pascal Miralles, mettant en scène un spectacle de marionnettes captivant pour les enfants de 4 à 10 ans.">
-  <meta name="keywords" content="charlotte, marionnettes, spectacle, enfants, théâtre, EDJS">
+  <meta name="description" content="Un spectacle basé sur l'art de dessin de sable, hommage au Sahara et à l'histoire légendaire du Petit Prince de Saint-Exupéry.">
+  <meta name="keywords" content="le petit prince, dessin de sable, spectacle, enfants, théâtre, EDJS, saint-exupéry">
   <meta name="robots" content="INDEX,FOLLOW">
 
   <!-- Mobile Specific Metas -->
@@ -37,6 +37,12 @@
   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
   <link rel="stylesheet" href="assets/css/animate.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Header Menu Hover Color Fix */
+    .vs-header .main-menu ul li a svg path {
+      fill: #BDCF00 !important;
+    }
+  </style>
 
 </head>
 
@@ -169,116 +175,473 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="vs-hero-wrapper position-relative" style="min-height: 70vh; display: flex; align-items: center;">
   <style>
-    @media (max-width: 768px) {
-      .vs-hero-wrapper {
-        min-height: 60vh !important;
-        padding: 40px 0 !important;
-      }
-      
-      .vs-hero-content {
-        padding: 20px !important;
-      }
-      
-      .vs-hero-title {
-        font-size: 2.5rem !important;
-        margin-bottom: 20px !important;
-      }
-      
-      .vs-hero-text {
-        font-size: 1.1rem !important;
-        margin-bottom: 25px !important;
-      }
-      
-      .vs-hero-btns {
-        flex-direction: column !important;
-        gap: 15px !important;
-        align-items: center !important;
-      }
-      
-      .vs-hero-btns .vs-btn {
-        width: 100% !important;
-        max-width: 280px !important;
-        text-align: center !important;
-      }
-      
-      .hero-stats {
-        flex-direction: column !important;
-        gap: 20px !important;
-        margin-top: 30px !important;
-      }
-      
-      .stat-number {
-        font-size: 2rem !important;
-      }
+    :root {
+      --primary-color: #BDCF00;
+      --text-dark: #2c3e50;
+      --text-light: #6c757d;
+      --bg-light: #f8f9fa;
+      --border-light: #e9ecef;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .spectacle-hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 6rem 0;
     }
     
+    .min-vh-75 {
+      min-height: 75vh;
+    }
+    
+    .floating-shape {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .shape-1 {
+      width: 100px;
+      height: 100px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+    
+    .shape-2 {
+      width: 60px;
+      height: 60px;
+      top: 60%;
+      right: 15%;
+      animation-delay: 2s;
+    }
+    
+    .shape-3 {
+      width: 80px;
+      height: 80px;
+      bottom: 20%;
+      left: 20%;
+      animation-delay: 4s;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+    
+    .hero-image img:hover {
+      transform: rotate(0deg) scale(1.05);
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2) !important;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-badge {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-family: 'Amatic SC', cursive;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      opacity: 0.9;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0.95;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .info-pills {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .info-pill {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .reservation-btn {
+      background: white;
+      color: var(--primary-color);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 2rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .reservation-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      color: var(--primary-color);
+    }
+
+    .hero-image {
+      position: relative;
+      margin-top: 2rem;
+    }
+
+    .hero-image img {
+      width: 400px;
+      height: 267px;
+      object-fit: cover;
+      border-radius: 1rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .content-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border-light);
+    }
+
+    .content-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .card-title {
+      color: var(--text-dark);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .card-title i {
+      color: var(--primary-color);
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .feature-item:last-child {
+      border-bottom: none;
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .numbered-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .numbered-item:last-child {
+      border-bottom: none;
+    }
+
+    .number-badge {
+      width: 30px;
+      height: 30px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .sidebar-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-light);
+    }
+
+    .sidebar-card h3 {
+      color: var(--text-dark);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .sidebar-card h3 i {
+      color: var(--primary-color);
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+      color: var(--text-light);
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .info-item i {
+      color: var(--primary-color);
+      width: 20px;
+    }
+
+    .showtime-item {
+      background: var(--bg-light);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .showtime-date {
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.25rem;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .showtime-time {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .showtime-btn {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all 0.3s ease;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .showtime-btn:hover {
+      background: #a8b800;
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @media (max-width: 768px) {
+      .spectacle-hero {
+        min-height: 60vh;
+        padding: 3rem 0;
+      }
+      .hero-title { 
+        font-size: 2.8rem; 
+      }
+      .hero-subtitle { 
+        font-size: 1.1rem; 
+      }
+      .hero-description { 
+        font-size: 1rem; 
+        padding: 0 1rem;
+      }
+      .info-pills { 
+        gap: 0.5rem; 
+        padding: 0 1rem;
+      }
+      .hero-image img { 
+        width: 320px; 
+        height: 213px; 
+      }
+      .content-card { 
+        padding: 1.5rem; 
+        margin: 0 1rem 2rem 1rem;
+      }
+      .sidebar-card {
+        margin: 0 1rem 1.5rem 1rem;
+      }
+    }
+
     @media (max-width: 480px) {
-      .vs-hero-wrapper {
-        min-height: 50vh !important;
-        padding: 30px 0 !important;
+      .spectacle-hero {
+        min-height: 50vh;
+        padding: 2rem 0;
       }
-      
-      .vs-hero-title {
-        font-size: 2rem !important;
+      .hero-title { 
+        font-size: 2.2rem; 
       }
-      
-      .vs-hero-text {
-        font-size: 1rem !important;
+      .hero-subtitle { 
+        font-size: 1rem; 
       }
-      
-      .hero-badge {
-        font-size: 0.8rem !important;
-        padding: 6px 15px !important;
+      .hero-description { 
+        font-size: 0.9rem; 
       }
-      
-      .stat-number {
-        font-size: 1.8rem !important;
+      .hero-image img { 
+        width: 280px; 
+        height: 187px; 
+      }
+      .content-card { 
+        padding: 1rem; 
+      }
+      .sidebar-card {
+        padding: 1rem;
       }
     }
   </style>
-    <div class="vs-hero-bg" data-bg-src="assets/img/charlotte-poster.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1;"></div>
-    <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(189, 207, 0, 0.8), rgba(112, 22, 126, 0.8)); z-index: 2;"></div>
-    <div class="container" style="position: relative; z-index: 3;">
-      <div class="row align-items-center justify-content-center text-center">
-        <div class="col-lg-10">
-          <div class="vs-hero-content text-white">
-            <div class="hero-badge" style="background: rgba(255,255,255,0.2); color: white; padding: 8px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px;">
-              <i class="fas fa-theater-masks"></i>
-              Spectacle EDJS
+
+  <!-- Hero Section -->
+  <section class="spectacle-hero" style="background: linear-gradient(135deg, #BDCF00 0%, #A8B800 100%); position: relative; overflow: hidden;">
+    <!-- Background Elements -->
+    <div class="hero-bg-elements">
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+      <div class="floating-shape shape-3"></div>
+    </div>
+    
+    <div class="container">
+      <div class="row align-items-center min-vh-75">
+        <div class="col-lg-6 order-2 order-lg-1">
+          <div class="hero-content text-center text-lg-start">
+            <div class="hero-badge mb-3">
+              <i class="fas fa-theater-masks me-2"></i>
+              Spectacle de Marionnettes
             </div>
-            <h1 class="vs-hero-title" style="font-size: 4rem; font-weight: 700; margin-bottom: 25px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
-              <span style="color: #BDCF00;">Charlotte</span>
-            </h1>
-            <p class="vs-hero-text" style="font-size: 1.3rem; margin-bottom: 35px; line-height: 1.6; opacity: 0.95; max-width: 600px; margin-left: auto; margin-right: auto; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
-              Une histoire touchante avec Juliere Gillis et Pascal Miralles, mettant en scène un spectacle de marionnettes captivant pour les enfants.
+            <h1 class="hero-title display-1 fw-bold mb-3" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Charlotte</h1>
+            <p class="hero-subtitle fs-4 mb-4" style="color: rgba(255,255,255,0.95);">Un voyage émotionnel à travers l'art des marionnettes</p>
+            <p class="hero-description fs-5 mb-4" style="color: rgba(255,255,255,0.9); line-height: 1.6;">
+              Charlotte a 12 ans. Elle aime l'école, mais l'école ne l'aime pas. Sa seule joie, c'est d'attendre le mercredi pour jouer du violon au conservatoire.
             </p>
-            <div class="vs-hero-btns" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-              <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="vs-btn" style="background: white; color: #BDCF00; border: none; padding: 15px 35px; border-radius: 30px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
-                <i class="fas fa-ticket-alt" style="margin-right: 8px;"></i>
-                Réserver des Billets
+            <div class="info-pills d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 mb-4">
+              <span class="info-pill px-3 py-2 rounded-pill" style="background: rgba(255,255,255,0.2); color: white; font-weight: 500;">
+                <i class="fas fa-clock me-2"></i>50 min
+              </span>
+              <span class="info-pill px-3 py-2 rounded-pill" style="background: rgba(255,255,255,0.2); color: white; font-weight: 500;">
+                <i class="fas fa-child me-2"></i>Dès 5 ans
+              </span>
+              <span class="info-pill px-3 py-2 rounded-pill" style="background: rgba(255,255,255,0.2); color: white; font-weight: 500;">
+                <i class="fas fa-users me-2"></i>2 Comédiens
+              </span>
+            </div>
+            <div class="hero-buttons d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+              <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="btn btn-light px-3 py-2 rounded-pill shadow-lg" style="font-weight: 600; transition: all 0.3s ease;">
+                <i class="fas fa-ticket-alt me-2"></i>
+                Réserver Maintenant
               </a>
-              <a href="#details" class="vs-btn style4" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white; padding: 15px 35px; border-radius: 30px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
-                <i class="fas fa-info-circle" style="margin-right: 8px;"></i>
-                En Savoir Plus
+              <button class="btn btn-outline-light px-3 py-2 rounded-pill" style="font-weight: 600; border: 2px solid white;">
+                <i class="fas fa-play me-2"></i>
+                Voir la Bande-annonce
+              </button>
+              <a href="assets/dossiers-pedagogiques/charlotte-dossier-pedagogique.pdf" 
+                 class="btn btn-success px-3 py-2 rounded-pill shadow-lg" 
+                 style="background: #BDCF00; border: none; font-weight: 600; transition: all 0.3s ease;" 
+                 download="Charlotte_Dossier_Pedagogique.pdf">
+                <i class="fas fa-download me-2"></i>
+                Dossier Pédagogique
               </a>
             </div>
-            
-            <!-- Hero Stats -->
-            <div class="hero-stats" style="margin-top: 50px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
-              <div class="stat-item text-center">
-                <div class="stat-number" style="color: #BDCF00; font-size: 2.5rem; font-weight: 700; margin-bottom: 5px;">50min</div>
-                <div class="stat-label" style="color: rgba(255,255,255,0.9); font-size: 1rem;">Durée</div>
-              </div>
-              <div class="stat-item text-center">
-                <div class="stat-number" style="color: #BDCF00; font-size: 2.5rem; font-weight: 700; margin-bottom: 5px;">4+</div>
-                <div class="stat-label" style="color: rgba(255,255,255,0.9); font-size: 1rem;">Âge minimum</div>
-              </div>
-              <div class="stat-item text-center">
-                <div class="stat-number" style="color: #BDCF00; font-size: 2.5rem; font-weight: 700; margin-bottom: 5px;">100DH</div>
-                <div class="stat-label" style="color: rgba(255,255,255,0.9); font-size: 1rem;">À partir de</div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
+          <div class="hero-image text-center position-relative">
+            <div class="image-container" style="position: relative; display: inline-block;">
+              <img src="assets/edjs img/Casse-Noisette_Web_013-1024x683.webp" alt="Charlotte - Spectacle de Marionnettes" 
+                   class="img-fluid rounded-4 shadow-lg" 
+                   style="max-width: 500px; width: 100%; height: auto; transform: rotate(-2deg); transition: transform 0.3s ease;">
+              <div class="image-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, rgba(189,207,0,0.1), rgba(255,255,255,0.1)); border-radius: 1rem;"></div>
+              <div class="floating-badge" style="position: absolute; top: -10px; right: -10px; background: white; padding: 12px; border-radius: 50%; box-shadow: 0 8px 25px rgba(0,0,0,0.15); animation: bounce 2s infinite;">
+                <i class="fas fa-star" style="color: #BDCF00; font-size: 1.2rem;"></i>
               </div>
             </div>
           </div>
@@ -287,129 +650,221 @@
     </div>
   </section>
 
-  <!-- Spectacle Details -->
-  <section class="space-top space-extra-bottom" id="details">
+  <!-- Main Content -->
+  <section style="padding: 4rem 0; background: var(--bg-light);">
     <div class="container">
       <div class="row">
         <div class="col-lg-8">
-          <div class="vs-blog single-blog">
-            <div class="blog-img">
-              <img src="assets/img/charlotte-poster.jpg" alt="Charlotte" class="w-100">
-            </div>
-            <div class="blog-content">
-              <div class="blog-meta">
-                <a href="#"><i class="far fa-calendar"></i>Octobre - Novembre 2025</a>
-                <a href="#"><i class="far fa-user"></i>4-10 ans</a>
-                <a href="#"><i class="far fa-clock"></i>50 minutes</a>
-              </div>
-              <h2 class="blog-title h1">Charlotte - Spectacle de Marionnettes</h2>
-              <p>Découvrez l'univers magique de Charlotte, un spectacle de marionnettes touchant qui raconte une histoire pleine d'émotion et de tendresse. Avec Juliere Gillis et Pascal Miralles, ce spectacle offre une expérience théâtrale unique pour les jeunes spectateurs.</p>
-              
-              <blockquote>
-                <p>"Un spectacle qui touche le cœur des enfants et éveille leur imagination à travers l'art délicat des marionnettes."</p>
-                <cite>- Équipe Artistique EDJS</cite>
-              </blockquote>
-
-              <h3>Synopsis</h3>
-              <p>Charlotte nous emmène dans un voyage émotionnel à travers l'art des marionnettes. Cette histoire touchante explore les thèmes de l'amitié, de la découverte de soi et de la magie du quotidien. Grâce à la mise en scène de Pascal Miralles, les marionnettes prennent vie pour raconter une histoire universelle qui résonne avec les petits et les grands.</p>
-
-              <h3>Équipe Artistique</h3>
-              <ul class="vs-list list-unstyled">
-                <li><i class="far fa-check"></i>Avec : Juliere Gillis et Pascal Miralles</li>
-                <li><i class="far fa-check"></i>Mise en scène : Pascal Miralles</li>
-                <li><i class="far fa-check"></i>Technique : Marionnettes</li>
-                <li><i class="far fa-check"></i>Genre : Spectacle familial</li>
-                <li><i class="far fa-check"></i>Production : EDJS</li>
-              </ul>
-
-              <h3>Informations Pratiques</h3>
+          <!-- Story & Synopsis Card -->
+          <div class="content-card">
+            <h2 class="card-title">
+              <i class="fas fa-book-open"></i>
+              Histoire & Synopsis
+            </h2>
+            <p style="color: var(--text-light); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+              Charlotte a 12 ans. Elle aime l'école, mais l'école ne l'aime pas. Sa seule joie, c'est d'attendre le mercredi pour jouer du violon au conservatoire.
+            </p>
+            <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 2rem;">
+              Le reste du temps, elle se réfugie dans une petite cabane, dans la forêt près de chez elle, où elle s'invente des histoires... Un spectacle touchant qui explore l'univers d'une jeune fille à la recherche de sa place dans le monde, entre réalité et imaginaire.
+            </p>
+            
+            <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 0.75rem; border-left: 4px solid var(--primary-color); margin-bottom: 2rem;">
+              <h4 style="color: var(--text-dark); margin-bottom: 1rem; font-size: 1.1rem;">Détails du Spectacle</h4>
               <div class="row">
                 <div class="col-md-6">
-                  <h4>Durée et Public</h4>
-                  <ul class="vs-list list-unstyled">
-                    <li><i class="far fa-clock"></i>Durée : 50 minutes</li>
-                    <li><i class="far fa-users"></i>Public : À partir de 4 ans</li>
-                    <li><i class="far fa-calendar"></i>Période : Octobre - Novembre 2025</li>
-                  </ul>
+                  <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <span><strong>Durée:</strong> 50 minutes</span>
+                  </div>
+                  <div class="info-item">
+                    <i class="fas fa-child"></i>
+                    <span><strong>Public:</strong> Dès 5 ans</span>
+                  </div>
                 </div>
                 <div class="col-md-6">
-                  <h4>Tarifs</h4>
-                  <ul class="vs-list list-unstyled">
-                    <li><i class="far fa-ticket-alt"></i>Enfant : 100 DH</li>
-                    <li><i class="far fa-ticket-alt"></i>Adulte : 120 DH</li>
-                    <li><i class="far fa-ticket-alt"></i>Groupe (10+) : -15%</li>
-                  </ul>
+                  <div class="info-item">
+                    <i class="fas fa-calendar"></i>
+                    <span><strong>Période:</strong> du 23 au 27/01 à Rabat, du 28 au 31/01 à Casa</span>
+                  </div>
+                  <div class="info-item">
+                    <i class="fas fa-language"></i>
+                    <span><strong>Langue:</strong> Français</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-4">
-          <aside class="sidebar-area">
-            <div class="widget widget_booking">
-              <h3 class="widget_title">Réservation</h3>
-              <div class="booking-form-wrap">
-                <form action="contact.html" class="booking-form">
-                  <input type="hidden" name="spectacle" value="charlotte">
-                  <div class="form-group">
-                    <label for="booking-date">Date souhaitée</label>
-                    <input type="date" id="booking-date" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label for="booking-time">Horaire</label>
-                    <select id="booking-time" class="form-control">
-                      <option>14h30 (Matinée)</option>
-                      <option>19h00 (Soirée)</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="booking-tickets">Nombre de billets</label>
-                    <input type="number" id="booking-tickets" class="form-control" min="1" value="2">
-                  </div>
-                  <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="vs-btn w-100">Réserver Maintenant</a>
-                </form>
-              </div>
-            </div>
 
-            <div class="widget widget_recent_spectacles">
-              <h3 class="widget_title">Autres Spectacles</h3>
-              <div class="recent-post-wrap">
-                <div class="recent-post">
-                  <div class="media-img">
-                    <a href="spectacle-tara-sur-la-lune.html"><img src="assets/img/tara-sur-la-lune-poster.jpg" alt="تارا إلى القمر"></a>
-                  </div>
-                  <div class="media-body">
-                    <h4 class="post-title"><a class="text-inherit" href="spectacle-tara-sur-la-lune.html">تارا إلى القمر</a></h4>
-                    <div class="recent-post-meta">
-                      <a href="#"><i class="fal fa-calendar-days"></i>Nov - Déc 2025</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="recent-post">
-                  <div class="media-img">
-                    <a href="spectacle-leau-la.html"><img src="assets/img/leau-la-poster.jpg" alt="L'Eau-Là"></a>
-                  </div>
-                  <div class="media-body">
-                    <h4 class="post-title"><a class="text-inherit" href="spectacle-leau-la.html">L'Eau-Là</a></h4>
-                    <div class="recent-post-meta">
-                      <a href="#"><i class="fal fa-calendar-days"></i>Jan - Fév 2026</a>
-                    </div>
-                  </div>
-                </div>
+          <!-- Artistic Team Card -->
+          <div class="content-card">
+            <h2 class="card-title">
+              <i class="fas fa-users"></i>
+              Équipe Artistique
+            </h2>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-star"></i>
+              </div>
+              <div>
+                <strong style="color: var(--text-dark);">Avec : Juliere Gillis et Pascal Miralles</strong>
+                <p style="color: var(--text-light); margin: 0; font-size: 0.9rem;">Comédiens et marionnettistes</p>
               </div>
             </div>
-          </aside>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-theater-masks"></i>
+              </div>
+              <div>
+                <strong style="color: var(--text-dark);">Thème : Enfance et Imaginaire</strong>
+                <p style="color: var(--text-light); margin: 0; font-size: 0.9rem;">Entre réalité et rêves d'enfant</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-hand-paper"></i>
+              </div>
+              <div>
+                <strong style="color: var(--text-dark);">Avec : 2 Comédiens</strong>
+                <p style="color: var(--text-light); margin: 0; font-size: 0.9rem;">Marionnettistes professionnels</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <div>
+                <strong style="color: var(--text-dark);">Genre : Spectacle familial</strong>
+                <p style="color: var(--text-light); margin: 0; font-size: 0.9rem;">Pour toute la famille</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Special Features Card -->
+          <div class="content-card">
+            <h2 class="card-title">
+              <i class="fas fa-magic"></i>
+              Caractéristiques Spéciales
+            </h2>
+            <div class="numbered-item">
+              <div class="number-badge">1</div>
+              <div>
+                <strong style="color: var(--text-dark);">Art des Marionnettes</strong>
+                <p style="color: var(--text-light); margin: 0.5rem 0 0 0;">Découverte de l'art captivant des marionnettes et du théâtre</p>
+              </div>
+            </div>
+            <div class="numbered-item">
+              <div class="number-badge">2</div>
+              <div>
+                <strong style="color: var(--text-dark);">Histoire Touchante</strong>
+                <p style="color: var(--text-light); margin: 0.5rem 0 0 0;">L'histoire émouvante de Charlotte et sa quête d'identité</p>
+              </div>
+            </div>
+            <div class="numbered-item">
+              <div class="number-badge">3</div>
+              <div>
+                <strong style="color: var(--text-dark);">Expérience Immersive</strong>
+                <p style="color: var(--text-light); margin: 0.5rem 0 0 0;">Un spectacle qui captive l'attention et stimule l'imagination</p>
+              </div>
+            </div>
+            <div class="numbered-item">
+              <div class="number-badge">4</div>
+              <div>
+                <strong style="color: var(--text-dark);">Valeurs Éducatives</strong>
+                <p style="color: var(--text-light); margin: 0.5rem 0 0 0;">Transmission de valeurs importantes à travers le divertissement</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <!-- Show Information Card -->
+          <div class="sidebar-card">
+            <h3><i class="fas fa-info-circle"></i> Informations Spectacle</h3>
+            <div class="info-item">
+              <i class="fas fa-clock"></i>
+              <span>Durée : 50 minutes</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-child"></i>
+              <span>Âge : Dès 5 ans</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-language"></i>
+              <span>Langue : Français</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-users"></i>
+              <span>Genre : Familial</span>
+            </div>
+          </div>
+
+          <!-- Venue Information Card -->
+          <div class="sidebar-card">
+            <h3><i class="fas fa-map-marker-alt"></i> Lieu & Contact</h3>
+            <div class="info-item">
+              <i class="fas fa-building"></i>
+              <span>École du Jeune Spectateur</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-pin"></i>
+              <span>Casablanca, Maroc</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <span>+212 5 22 98 10 85</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <span>info@edjs.ma</span>
+            </div>
+          </div>
+
+          <!-- Available Showtimes Card -->
+          <div class="sidebar-card">
+            <h3><i class="fas fa-calendar-alt"></i> Séances Disponibles</h3>
+            <div class="showtime-item">
+              <div class="showtime-date">23 au 27 Janvier 2025</div>
+              <div class="showtime-time">Rabat - Représentations</div>
+              <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="showtime-btn">
+                <i class="fas fa-ticket-alt"></i>
+                Réserver
+              </a>
+            </div>
+            <div class="showtime-item">
+              <div class="showtime-date">28 au 31 Janvier 2025</div>
+              <div class="showtime-time">Casablanca - Représentations</div>
+              <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="showtime-btn">
+                <i class="fas fa-ticket-alt"></i>
+                Réserver
+              </a>
+            </div>
+            <div class="showtime-item">
+              <div class="showtime-date">Janvier 2025</div>
+              <div class="showtime-time">Séances supplémentaires</div>
+              <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="showtime-btn">
+                <i class="fas fa-ticket-alt"></i>
+                Réserver
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!--==============================
-        Footer Area
-    ==============================-->
+  <!-- Sticky Reservation Button -->
+  <div id="stickyReservation" style="position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 50; opacity: 0; visibility: hidden; transition: all 0.3s ease;">
+    <div style="background: white; border-radius: 3rem; padding: 0.75rem; box-shadow: 0 20px 40px rgba(0,0,0,0.15); border: 4px solid var(--primary-color);">
+      <a href="https://alexpriier-cloud-hel-3u3k.bolt.host/" class="reservation-btn" style="animation: pulse 2s infinite; box-shadow: 0 4px 15px rgba(189, 207, 0, 0.4);">
+        <i class="fas fa-ticket-alt"></i>
+        Réserver Maintenant
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <div class="vs-footer bg-title">
     <div class="vs-footer__top z-index-common space-extra-top space-extra-bottom">
-      <img src="assets/img/icon edjs-22.png" alt="Footer Element" class="vs-footer__ele1 wow animate__fadeInLeft" data-wow-delay="0.25s" style="width: 120px; height: 120px;">
       <img src="assets/img/footer/footer-element-2.png" alt="Footer Element" class="vs-footer__ele2">
       <div class="vs-balls vs-balls--screen" data-balls-top="-6px" data-balls-color="#ffffff"></div>
       <div class="container">
@@ -417,8 +872,8 @@
           <div class="col-lg-4 col-md-6 wow animate__fadeInUp" data-wow-delay="0.25s">
             <div class="vs-footer__widget">
               <div class="vs-footer__logo text-center text-md-start mb-25">
-                <a href="index.html" class="vs-footer__logo-link">
-                  <img src="assets/img/edjs logo black@4x.png" alt="EDJS" style="height: 50px; width: auto; filter: brightness(0) invert(1);">
+                <a href="index.html" class="vs-logo">
+                  <img src="assets/img/Asset 2@4x.png" alt="EDJS" style="height: 120px; width: auto; max-width: none !important;">
                 </a>
               </div>
               <p class="vs-footer__desc text-center text-md-start" style="color: #999999;">
@@ -494,7 +949,7 @@
         <div class="row gy-3 gx-5 align-items-center justify-content-center justify-content-lg-between flex-column-reverse flex-lg-row">
           <div class="col-md-auto">
             <p class="vs-footer__copyright mb-0" style="color: #999999;">
-              Copyright &copy; <span id="currentYear"></span>
+              Copyright © <span id="currentYear"></span>
               <a href="index.html">EDJS</a>. Tous droits réservés.
             </p>
           </div>
@@ -509,17 +964,29 @@
     </div>
   </div>
 
-  <!-- JavaScript Files -->
-  <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+  <script>
+    // Show sticky reservation button after scrolling past hero section
+    window.addEventListener('scroll', function() {
+      const heroSection = document.querySelector('.spectacle-hero');
+      const stickyButton = document.getElementById('stickyReservation');
+      const heroHeight = heroSection.offsetHeight;
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > heroHeight * 0.8) {
+        stickyButton.style.opacity = '1';
+        stickyButton.style.visibility = 'visible';
+      } else {
+        stickyButton.style.opacity = '0';
+        stickyButton.style.visibility = 'hidden';
+      }
+    });
+  </script>
+
+  <!-- JS Files -->
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/wow.min.js"></script>
-  <script src="assets/js/jquery.magnific-popup.min.js"></script>
   <script src="assets/js/main.js"></script>
-
-  <script>
-    // Set current year in footer
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-  </script>
 
 </body>
 </html>
